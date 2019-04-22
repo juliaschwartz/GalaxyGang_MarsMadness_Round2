@@ -7,6 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
 
+/***************************************************
+ * implementation for home.xml
+ **************************************************/
 
 public class homeActivity extends Activity implements OnClickListener{
 

@@ -7,6 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
 
+/***************************************************
+ * implementation for launch.xml
+ **************************************************/
 
 public class MainActivity extends Activity implements OnClickListener {
 
