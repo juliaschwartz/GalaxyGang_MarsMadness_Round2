@@ -9,4 +9,6 @@
     <string name="how_many_cards">HOW MANY CARDS:</string>
     <string name="play">PLAY</string>
     <string name="go_back">GO BACK</string>
+    <string name="easy">EASY</string>
+    <string name="hard">HARD</string>
 </resources>
