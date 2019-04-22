@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:backgroundColor="@color/colorPrimary"
-        android:text=" Play "
+        android:text="@string/play"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         android:textStyle="bold|italic"

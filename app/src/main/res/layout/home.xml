@@ -19,7 +19,7 @@
         android:textStyle="bold|italic"
         android:typeface="monospace"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="264dp" />
+        tools:layout_editor_absoluteY="323dp" />
 
     <Button
         android:id="@+id/button3"
@@ -45,5 +45,5 @@
         android:textStyle="bold|italic"
         android:typeface="monospace"
         tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="70dp" />
+        tools:layout_editor_absoluteY="196dp" />
 </android.support.constraint.ConstraintLayout>
