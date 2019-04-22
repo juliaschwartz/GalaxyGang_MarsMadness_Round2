@@ -16,10 +16,6 @@ import android.view.Menu;
  * back button - goes back to home screen
  **************************************************/
 
-//weeeeeeeee
-
-
-
 public class singleMenu extends Activity implements OnClickListener{
 
     private Button back;
