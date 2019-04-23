@@ -29,7 +29,7 @@
         tools:layout_editor_absoluteY="85dp"/>
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card1"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
@@ -37,7 +37,7 @@
         tools:layout_editor_absoluteY="100dp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card2"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
@@ -45,7 +45,7 @@
         tools:layout_editor_absoluteY="100dp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card3"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
@@ -53,7 +53,7 @@
         tools:layout_editor_absoluteY="230dp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card4"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
@@ -61,7 +61,7 @@
         tools:layout_editor_absoluteY="230dp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card5"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
@@ -69,7 +69,7 @@
         tools:layout_editor_absoluteY="360dp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card6"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
@@ -77,7 +77,7 @@
         tools:layout_editor_absoluteY="360dp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card7"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
@@ -85,15 +85,33 @@
         tools:layout_editor_absoluteY="490dp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/card8"
         android:layout_width="100dp"
         android:layout_height="120dp"
         android:src="@drawable/cardpicwithround"
         tools:layout_editor_absoluteX="210dp"
         tools:layout_editor_absoluteY="490dp" />
 
+    <TableRow
+        android:layout_width="395dp"
+        android:layout_height="58dp"
+        android:background="@color/colorPrimary"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" >
 
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="time" />
 
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time" />
+    </TableRow>
 
 
 </android.support.constraint.ConstraintLayout>
