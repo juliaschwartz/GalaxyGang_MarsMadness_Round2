@@ -21,8 +21,8 @@ public class homeActivity extends Activity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        single = (Button) findViewById(R.id.single);
-        multi =  (Button) findViewById(R.id.multi);
+        single = (Button) findViewById(R.id.button);
+        multi =  (Button) findViewById(R.id.button3);
 
         single.setOnClickListener(this);
         multi.setOnClickListener(this);
@@ -31,12 +31,12 @@ public class homeActivity extends Activity implements OnClickListener{
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.single :
+            case R.id.button :
             {
                 launchSingle();
                 break;
             }
-            case R.id.multi :
+            case R.id.button3 :
             {
                 launchMulti();
                 break;
