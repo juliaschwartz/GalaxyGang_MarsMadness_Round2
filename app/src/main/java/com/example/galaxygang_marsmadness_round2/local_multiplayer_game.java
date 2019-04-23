@@ -396,8 +396,77 @@ public class local_multiplayer_game extends AppCompatActivity {
             cpuPoints++;
             tv_p2.setText("P2: " + playerPoints);
         }
+    } else {
+        iv_11.setImageResource(R.drawable.ic_back);
+        iv_12.setImageResource(R.drawable.ic_back);
+        iv_13.setImageResource(R.drawable.ic_back);
+        iv_14.setImageResource(R.drawable.ic_back);
+        iv_21.setImageResource(R.drawable.ic_back);
+        iv_22.setImageResource(R.drawable.ic_back);
+        iv_23.setImageResource(R.drawable.ic_back);
+        iv_24.setImageResource(R.drawable.ic_back);
+        iv_31.setImageResource(R.drawable.ic_back);
+        iv_32.setImageResource(R.drawable.ic_back);
+        iv_33.setImageResource(R.drawable.ic_back);
+        iv_34.setImageResource(R.drawable.ic_back);
+        iv_41.setImageResource(R.drawable.ic_back);
+        iv_42.setImageResource(R.drawable.ic_back);
+        iv_43.setImageResource(R.drawable.ic_back);
+        iv_44.setImageResource(R.drawable.ic_back);
+
+        //change the player turn and corresponding text color
+        if(turn == 1){
+            turn = 2;
+            tv_p1.setTextColor(Color.GRAY);
+            tv_p2.setTextColor(Color.BLACK);
+        } else if(turn == 2){
+            turn = 1;
+            tv_p1.setTextColor(Color.BLACK);
+            tv_p2.setTextColor(Color.GRAY);
+        }
     }
+
+        iv_11.setEnabled(true);
+        iv_12.setEnabled(true);
+        iv_13.setEnabled(true);
+        iv_14.setEnabled(true);
+        iv_21.setEnabled(true);
+        iv_22.setEnabled(true);
+        iv_23.setEnabled(true);
+        iv_24.setEnabled(true);
+        iv_31.setEnabled(true);
+        iv_32.setEnabled(true);
+        iv_33.setEnabled(true);
+        iv_34.setEnabled(true);
+        iv_41.setEnabled(true);
+        iv_42.setEnabled(true);
+        iv_43.setEnabled(true);
+        iv_44.setEnabled(true);
+
+        //check if the game is over
+        checkEnd();
     }
+    private void checkEnd() {
+        if (iv_11.getVisibility() == View.INVISIBLE &&
+                iv_12.getVisibility() == View.INVISIBLE &&
+                iv_13.getVisibility() == View.INVISIBLE &&
+                iv_14.getVisibility() == View.INVISIBLE &&
+                iv_21.getVisibility() == View.INVISIBLE &&
+                iv_22.getVisibility() == View.INVISIBLE &&
+                iv_23.getVisibility() == View.INVISIBLE &&
+                iv_24.getVisibility() == View.INVISIBLE &&
+                iv_31.getVisibility() == View.INVISIBLE &&
+                iv_32.getVisibility() == View.INVISIBLE &&
+                iv_33.getVisibility() == View.INVISIBLE &&
+                iv_34.getVisibility() == View.INVISIBLE &&
+                iv_41.getVisibility() == View.INVISIBLE &&
+                iv_42.getVisibility() == View.INVISIBLE &&
+                iv_43.getVisibility() == View.INVISIBLE &&
+                iv_44.getVisibility() == View.INVISIBLE){
+            
+        }
+        )
+}
 
     private void frontOfCardResources(){
         image101 = R.drawable.ic_image101;
