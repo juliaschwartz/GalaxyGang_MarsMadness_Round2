@@ -19,7 +19,7 @@ public class local_multiplayer_game extends AppCompatActivity {
 
 
     //array for the images
-    Integer[] cardsArray = [101, 102, 103, 104, 105, 106, 107, 107, 201, 202, 203, 204, 205, 206, 207, 208];
+    Integer[] cardsArray = {101, 102, 103, 104, 105, 106, 107, 107, 201, 202, 203, 204, 205, 206, 207, 208};
 
 
     //actual images
@@ -315,6 +315,88 @@ public class local_multiplayer_game extends AppCompatActivity {
 
             }
 
+    }
+
+    private void calculate() {
+        //if images are equal, remove them and add point
+    if (firstCard == secondCard){
+        if (clickedFirst == 0) {
+            iv_11.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 1) {
+            iv_12.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 2) {
+            iv_13.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 3) {
+            iv_14.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 4) {
+            iv_21.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 5) {
+            iv_22.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 6) {
+            iv_23.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 7) {
+            iv_24.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 8) {
+            iv_31.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 9) {
+            iv_32.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 10) {
+            iv_33.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 11) {
+            iv_34.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 12) {
+            iv_41.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 13) {
+            iv_42.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 14) {
+            iv_43.setVisibility(View.INVISIBLE);
+        } else if (clickedFirst == 15) {
+            iv_44.setVisibility(View.INVISIBLE);
+        }
+
+        if (clickedSecond == 0) {
+            iv_11.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 1) {
+            iv_12.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 2) {
+            iv_13.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 3) {
+            iv_14.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 4) {
+            iv_21.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 5) {
+            iv_22.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 6) {
+            iv_23.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 7) {
+            iv_24.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 8) {
+            iv_31.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 9) {
+            iv_32.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 10) {
+            iv_33.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 11) {
+            iv_34.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 12) {
+            iv_41.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 13) {
+            iv_42.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 14) {
+            iv_43.setVisibility(View.INVISIBLE);
+        } else if (clickedSecond == 15) {
+            iv_44.setVisibility(View.INVISIBLE);
+        }
+
+        //add points to the correct player
+        if (turn ==1){
+            playerPoints++;
+            tv_p1.setText("P1: " + playerPoints);
+        } else if (turn ==2) {
+            cpuPoints++;
+            tv_p2.setText("P2: " + playerPoints);
+        }
+    }
     }
 
     private void frontOfCardResources(){
