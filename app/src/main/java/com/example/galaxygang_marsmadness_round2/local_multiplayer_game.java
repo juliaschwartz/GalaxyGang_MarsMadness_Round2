@@ -2,6 +2,7 @@ package com.example.galaxygang_marsmadness_round2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class local_multiplayer_game extends AppCompatActivity {
 
@@ -76,6 +77,206 @@ public class local_multiplayer_game extends AppCompatActivity {
 
         //changing the color of the second player to show inactivity
         tv_p2.setTextColor(Color.GRAY);
+
+        iv_11.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_11, theCard);
+            }
+
+        });
+
+        iv_12.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_12, theCard);
+            }
+
+        });
+
+        iv_13.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_13, theCard);
+
+            }
+
+        });
+
+        iv_14.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_14, theCard);
+            }
+
+        });
+
+        iv_21.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_21, theCard);
+
+            }
+
+        });
+
+        iv_22.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_22, theCard);
+            }
+
+        });
+
+        iv_23.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_23, theCard);
+            }
+
+        });
+
+        iv_24.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_24, theCard);
+            }
+
+        });
+
+        iv_31.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_31, theCard);
+            }
+
+        });
+
+        iv_32.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_32, theCard);
+            }
+
+        });
+
+        iv_33.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_33, theCard);
+            }
+
+        });
+
+        iv_34.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_34, theCard);
+            }
+
+        });
+
+        iv_41.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_41, theCard);
+            }
+
+        });
+        iv_42.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_42, theCard);
+            }
+
+        });
+
+        iv_43.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_43, theCard);
+            }
+
+        });
+
+        iv_44.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                int theCard = Integer.parseInt( (String) view.getTag())
+                doStuff(iv_44, theCard);
+            }
+
+        });
+
+    private void doStuff(ImageView iv, int card){
+        //set the correct image to imageview
+            if (cardsArray[card] == 101){
+                iv.setImageResource(image101);
+            } else if (cardsArray[card] == 102){
+                iv.setImageResource(image102);
+            } else if (cardsArray[card] == 103){
+                iv.setImageResource(image103);
+            } else if (cardsArray[card] == 104){
+                iv.setImageResource(image104);
+            } else if (cardsArray[card] == 105){
+                iv.setImageResource(image105);
+            } else if (cardsArray[card] == 106){
+                iv.setImageResource(image106);
+            } else if (cardsArray[card] == 107){
+                iv.setImageResource(image107);
+            } else if (cardsArray[card] == 108){
+                iv.setImageResource(image108);
+            } else if (cardsArray[card] == 201){
+                iv.setImageResource(image201);
+            } else if (cardsArray[card] == 202){
+                iv.setImageResource(image202);
+            } else if (cardsArray[card] == 203){
+                iv.setImageResource(image203);
+            } else if (cardsArray[card] == 204){
+                iv.setImageResource(image204);
+            } else if (cardsArray[card] == 205){
+                iv.setImageResource(image205);
+            } else if (cardsArray[card] == 206){
+                iv.setImageResource(image206);
+            } else if (cardsArray[card] == 207){
+                iv.setImageResource(image207);
+            } else if (cardsArray[card] == 208){
+                iv.setImageResource(image208);
+            }
+
+            if (cardNumber ==1){
+                firstCard = cardsArray[card];
+                if (firstCard > 200){
+                    firstCard = firstCard - 100;
+                }
+                cardNumber = 2;
+                clickedFirst = card;
+
+                iv.setEnabled(false);
+            } else if (cardNumber == 2){
+                secondCard = cardsArray[card];
+                if (secondCard > 200){
+                    secondCard = secondCard - 100;
+                }
+                cardNumber = 1;
+                clickedSecond = card;
+
+            }
+
     }
 
     private void frontOfCardResources(){
