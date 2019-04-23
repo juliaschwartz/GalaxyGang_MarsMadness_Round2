@@ -9,6 +9,23 @@ public class local_multiplayer_game extends AppCompatActivity {
 
     ImageView iv_11, iv_12, iv_13, iv_14,iv_21, iv_22, iv_23, iv_24, iv_31, iv_32, iv_33, iv_34, iv_41, iv_42, iv_43, iv_44;
 
+
+    //array for the images
+    Integer[] cardsArray = [101, 102, 103, 104, 105, 106, 107, 107, 201, 202, 203, 204, 205, 206, 207, 208];
+
+
+    //actual images
+    int image101, image102, image103, image104, image105, image106, image107, image108,
+        image201, image202, image203, image204, image205, image206, image207, image208;
+
+    int firstCard, secondCard;
+    int clickedFirst, clickedSecond;
+    int cardNumber = 1;
+
+    int turn = 1;
+    int playerPoints = 0, cpuPoints = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
