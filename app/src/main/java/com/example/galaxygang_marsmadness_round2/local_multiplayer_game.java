@@ -1,8 +1,15 @@
 package com.example.galaxygang_marsmadness_round2;
 
+import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 public class local_multiplayer_game extends AppCompatActivity {
 
@@ -258,6 +265,8 @@ public class local_multiplayer_game extends AppCompatActivity {
                 iv.setImageResource(image208);
             }
 
+
+            //check which image is selected and save it to the temporary variable
             if (cardNumber ==1){
                 firstCard = cardsArray[card];
                 if (firstCard > 200){
@@ -274,6 +283,35 @@ public class local_multiplayer_game extends AppCompatActivity {
                 }
                 cardNumber = 1;
                 clickedSecond = card;
+
+                iv_11.setEnabled(false);
+                iv_12.setEnabled(false);
+                iv_13.setEnabled(false);
+                iv_14.setEnabled(false);
+                iv_21.setEnabled(false);
+                iv_22.setEnabled(false);
+                iv_23.setEnabled(false);
+                iv_24.setEnabled(false);
+                iv_31.setEnabled(false);
+                iv_32.setEnabled(false);
+                iv_33.setEnabled(false);
+                iv_34.setEnabled(false);
+                iv_41.setEnabled(false);
+                iv_42.setEnabled(false);
+                iv_43.setEnabled(false);
+                iv_44.setEnabled(false);
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //check if the selected images are equal
+                        calculate();
+                    }
+                }, 1000);
+            }
+                )
+
 
             }
 
