@@ -3,7 +3,7 @@ package com.example.galaxygang_marsmadness_round2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class local_multiplayer_game extends AppCompatActivity {
 
     TextView tv_p1, tv_p2;
 

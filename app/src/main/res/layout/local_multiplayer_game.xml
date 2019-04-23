@@ -9,7 +9,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.galaxygang_marsmadness_round2.MainActivity">
+    tools:context="com.example.galaxygang_marsmadness_round2.local_multiplayer_game">
 
     <include
         layout="@layout/images"
