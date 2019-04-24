@@ -1,7 +1,10 @@
 package com.example.galaxygang_marsmadness_round2;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -463,9 +466,28 @@ public class local_multiplayer_game extends AppCompatActivity {
                 iv_42.getVisibility() == View.INVISIBLE &&
                 iv_43.getVisibility() == View.INVISIBLE &&
                 iv_44.getVisibility() == View.INVISIBLE){
-            
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder.(local_multiplayer_game.this);
+            alertDialogBuilder
+                        .setMessage("GAME OVER!\nP1: " + playerPoints + "\nP2: " + cpuPoints)
+                        .setCancelable(false)
+                        .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(getApplicationContext(), local_multiplayer_game.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
+                    .setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
+                    @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                    }
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
         }
-        )
 }
 
     private void frontOfCardResources(){
