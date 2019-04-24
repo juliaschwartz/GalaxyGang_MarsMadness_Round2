@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">GalaxyGang_MarsMadness_Round2</string>
+    <string name="title">Mars\nMadness</string>
+
+    <string name="choose_a_game_mode">CHOOSE A GAME MODE:</string>
+    <string name="_24_cards">24</string>
+    <string name="_16_cards">16</string>
+    <string name="_8_cards"> 8</string>
+    <string name="how_many_cards">HOW MANY CARDS:</string>
+    <string name="play">PLAY</string>
+    <string name="go_back">GO BACK</string>
+    <string name="easy">EASY</string>
+    <string name="hard">HARD</string>
+    <string name="time">Time</string>
 </resources>
