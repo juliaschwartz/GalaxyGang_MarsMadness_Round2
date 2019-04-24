@@ -467,7 +467,7 @@ public class local_multiplayer_game extends AppCompatActivity {
                 iv_43.getVisibility() == View.INVISIBLE &&
                 iv_44.getVisibility() == View.INVISIBLE){
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder.(local_multiplayer_game.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(local_multiplayer_game.this);
             alertDialogBuilder
                         .setMessage("GAME OVER!\nP1: " + playerPoints + "\nP2: " + cpuPoints)
                         .setCancelable(false)
