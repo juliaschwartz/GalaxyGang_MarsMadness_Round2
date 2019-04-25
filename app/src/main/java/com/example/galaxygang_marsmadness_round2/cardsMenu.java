@@ -57,6 +57,7 @@ public class cardsMenu extends Activity implements OnClickListener {
                 } else if (cards24.isChecked()) {
                     launchGame(24, game_type);
                 }
+                break;
         }
     }
 
