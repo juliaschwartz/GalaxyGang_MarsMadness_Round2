@@ -9,10 +9,9 @@ import android.widget.RadioButton;
 import android.content.Intent;
 
 /***************************************************
- * implementation for single_player_menu.xml
- **************************************************/
+ * implementation for cards_menu.xml********************************************/
 
-public class singleMenu extends Activity implements OnClickListener{
+public class cardsMenu extends Activity implements OnClickListener{
 
     private Button back;
 
@@ -23,7 +22,7 @@ public class singleMenu extends Activity implements OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.single_player_menu);
+        setContentView(R.layout.cards_menu);
 
         back = (Button) findViewById(R.id.button4);
         back.setOnClickListener(this);
@@ -68,9 +67,9 @@ public class singleMenu extends Activity implements OnClickListener{
     }
 
     private void singleGame(int cards) {
-        Intent sing8 = new Intent(singleMenu.this, singleGame8.class);
-        Intent sing16= new Intent(singleMenu.this, singleGame16.class);
-        Intent sing24= new Intent(singleMenu.this, singleGame24.class);
+        Intent sing8 = new Intent(cardsMenu.this, singleGame8.class);
+        Intent sing16= new Intent(cardsMenu.this, singleGame16.class);
+        Intent sing24= new Intent(cardsMenu.this, singleGame24.class);
 
         switch(cards) {
             case 8: {
@@ -86,7 +85,7 @@ public class singleMenu extends Activity implements OnClickListener{
     }
 
     private void goHome() {
-        Intent goHome = new Intent(singleMenu.this, homeActivity.class);
+        Intent goHome = new Intent(cardsMenu.this, homeActivity.class);
         startActivity(goHome);
     }
 

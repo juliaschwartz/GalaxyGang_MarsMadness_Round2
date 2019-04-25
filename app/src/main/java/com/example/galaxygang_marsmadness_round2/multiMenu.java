@@ -8,13 +8,12 @@ import android.widget.RadioButton;
 import android.content.Intent;
 
 /***************************************************
- * implementation for multiplayer_menu.xml
- *
+ * implementation for multi_menu*
  * back button always there on bottom
  *
  * radio button checkbox - computer / local
  * onClick for local selected - pop up: searching for local opponents
- *      -will search bluetooth/wifi network for other phones
+ *      -will search WiFi/wifi network for other phones
  *      -choose opponent from menu of other phones - opponent accepts on their phone - pop up closes
  *      -on screen: opponent's name is shown in text box
  *      -radio button appears: size - small/medium/large
@@ -42,7 +41,7 @@ public class multiMenu extends Activity implements OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.multiplayer_menu);
+        setContentView(R.layout.multi_menu);
 
         human = (RadioButton) findViewById(R.id.findplayer);
         computer = (RadioButton) findViewById(R.id.computer);
@@ -84,7 +83,7 @@ public class multiMenu extends Activity implements OnClickListener{
                 }
                 break;
 
-            case (R.id.findplayer) : //when find player selected, go to bluetooth screen
+            case (R.id.findplayer) : //when find player selected, go to WiFi screen
                 if (checked) {
                     findPlayer();
                 }
@@ -132,7 +131,7 @@ public class multiMenu extends Activity implements OnClickListener{
         }
 
     private void findPlayer() {
-        Intent bluetooth = new Intent(multiMenu.this, BTsearch.class);
+        Intent bluetooth = new Intent(multiMenu.this, WiFisearch.class);
         startActivity(bluetooth);
 
     }

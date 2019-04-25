@@ -45,7 +45,7 @@ public class homeActivity extends Activity implements OnClickListener{
     }
 
     private void launchSingle() {
-        Intent sing = new Intent(homeActivity.this, singleMenu.class);
+        Intent sing = new Intent(homeActivity.this, cardsMenu.class);
         startActivity(sing);
     }
 

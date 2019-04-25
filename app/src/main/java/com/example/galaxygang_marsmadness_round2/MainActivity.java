@@ -13,13 +13,12 @@ import android.content.Intent;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-    private Button enter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.launch);
 
+        private Button enter;
         enter = (Button) findViewById(R.id.enter);
 
         enter.setOnClickListener(this);
