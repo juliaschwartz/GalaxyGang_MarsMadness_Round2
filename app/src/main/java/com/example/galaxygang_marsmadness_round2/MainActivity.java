@@ -18,7 +18,7 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.launch);
 
-        private Button enter;
+        Button enter;
         enter = (Button) findViewById(R.id.enter);
 
         enter.setOnClickListener(this);

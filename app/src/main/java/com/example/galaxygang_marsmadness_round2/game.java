@@ -12,5 +12,5 @@ import android.content.Intent;
  * implementation for singleplayer_game8.xml
  **************************************************/
 
-public class singleGame8 extends Activity{
+public class game extends Activity{
 }

@@ -9,79 +9,65 @@ import android.widget.RadioButton;
 import android.content.Intent;
 
 /***************************************************
- * implementation for cards_menu.xml********************************************/
+ * implementation for cards_menu.xml
+ * ********************************************/
 
-public class cardsMenu extends Activity implements OnClickListener{
-
-    private Button back;
+public class cardsMenu extends Activity implements OnClickListener {
 
     private RadioButton cards8;
     private RadioButton cards16;
     private RadioButton cards24;
+
+    private String game_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cards_menu);
 
-        back = (Button) findViewById(R.id.button4);
+        Button back = findViewById(R.id.back);
         back.setOnClickListener(this);
 
-        cards8 = (RadioButton) findViewById(R.id.cardsbutton_8);
-        cards16 = (RadioButton) findViewById(R.id.cardsbutton_16);
-        cards24 = (RadioButton) findViewById(R.id.cardsbutton_24);
+        Button start = findViewById(R.id.start);
+        start.setOnClickListener(this);
 
-        cards8.setOnClickListener(this);
-        cards16.setOnClickListener(this);
-        cards24.setOnClickListener(this);
+        cards8  = findViewById(R.id.cardsbutton_8);
+        cards16 = findViewById(R.id.cardsbutton_16);
+        cards24 = findViewById(R.id.cardsbutton_24);
+
+        Bundle b = getIntent().getExtras();
+        if (b != null){
+            game_type = b.getString("key");
+        }
+
     }
 
     @Override
     public void onClick(View v) {
-        boolean checked = ((RadioButton) v).isChecked();
 
         switch(v.getId()) {
-            case R.id.button4 :
+            case R.id.back :
                 goHome();
                 break;
-
-            case R.id.cardsbutton_8 :
-                if (checked) {
-                    singleGame(8);
+            case R.id.start :
+                if (cards8.isChecked()) {
+                    launchGame(8, game_type);
+                } else if (cards16.isChecked()) {
+                    launchGame(16, game_type);
+                } else if (cards24.isChecked()) {
+                    launchGame(24, game_type);
                 }
-                break;
-
-
-            case R.id.cardsbutton_16 :
-                if (checked) {
-                    singleGame(16);
-                }
-                break;
-
-            case R.id.cardsbutton_24 :
-                if (checked) {
-                    singleGame(24);
-                }
-                break;
         }
     }
 
-    private void singleGame(int cards) {
-        Intent sing8 = new Intent(cardsMenu.this, singleGame8.class);
-        Intent sing16= new Intent(cardsMenu.this, singleGame16.class);
-        Intent sing24= new Intent(cardsMenu.this, singleGame24.class);
+    private void launchGame(int cards, String type) {
+        Intent game = new Intent(cardsMenu.this, game.class);
+        Bundle b = new Bundle();
+        b.putString("type",type);
+        b.putInt("cards",cards);
+        game.putExtras(b);
+        startActivity(game);
 
-        switch(cards) {
-            case 8: {
-                startActivity(sing8);
-            }
-            case 16: {
-                startActivity(sing16);
-            }
-            case 24: {
-                startActivity(sing24);
-            }
-        }
     }
 
     private void goHome() {

@@ -33,7 +33,7 @@ public class homeActivity extends Activity implements OnClickListener{
         switch(v.getId()) {
             case R.id.button :
             {
-                launchSingle();
+                launchCards();
                 break;
             }
             case R.id.button3 :
@@ -44,9 +44,12 @@ public class homeActivity extends Activity implements OnClickListener{
         }
     }
 
-    private void launchSingle() {
-        Intent sing = new Intent(homeActivity.this, cardsMenu.class);
-        startActivity(sing);
+    private void launchCards() {
+        Intent Cards = new Intent(homeActivity.this, cardsMenu.class);
+        Bundle b = new Bundle();
+        b.putString("key","single");
+        Cards.putExtras(b);
+        startActivity(Cards);
     }
 
     private void launchMulti() {
