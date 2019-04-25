@@ -5,18 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/how_many_cards"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="35sp"
-        android:textStyle="bold|italic"
-        android:typeface="monospace"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="546dp" />
-
     <!-- this is what shows up after you have found an opponent with bluetooth -->
     <RadioGroup
         android:layout_width="match_parent"
@@ -24,45 +12,6 @@
         android:background="@color/colorPrimary"
         android:orientation="vertical"
                                             >
-
-    <RadioButton
-        android:id="@+id/cardsbutton_8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/_8_cards"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="35sp"
-        android:textStyle="bold|italic"
-        android:typeface="monospace"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="610dp" />
-
-    <RadioButton
-        android:id="@+id/cardsbutton_16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/_16_cards"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="35sp"
-        android:textStyle="bold|italic"
-        android:typeface="monospace"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="610dp" />
-
-    <RadioButton
-        android:id="@+id/cardsbutton_24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/_24_cards"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="35sp"
-        android:textStyle="bold|italic"
-        android:typeface="monospace"
-        tools:layout_editor_absoluteX="334dp"
-        tools:layout_editor_absoluteY="610dp" />
 
 
 </android.support.constraint.ConstraintLayout>
