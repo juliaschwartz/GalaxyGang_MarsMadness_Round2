@@ -39,11 +39,11 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/choose_a_game_mode"
+        android:text="@string/enter_your_name"
         android:textColor="@color/colorPrimary"
         android:textSize="35sp"
         android:textStyle="bold|italic"
         android:typeface="monospace"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="196dp" />
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="43dp" />
 </android.support.constraint.ConstraintLayout>

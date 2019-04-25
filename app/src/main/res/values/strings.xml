@@ -12,4 +12,5 @@
     <string name="easy">EASY</string>
     <string name="hard">HARD</string>
     <string name="time">Time</string>
+    <string name="enter_your_name">ENTER YOUR NAME:</string>
 </resources>
