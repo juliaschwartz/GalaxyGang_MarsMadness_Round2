@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/spacebackgroundimage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="371dp"
+        android:layout_height="641dp"
+        android:background="@color/colorAccent"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="74dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="352dp"
+        android:layout_height="621dp"
+        android:background="@color/colorAccent"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="85dp"/>
+
+
+
+
+    <ImageView
+        android:id="@+id/card1"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="93dp" />
+    <ImageView
+        android:id="@+id/card1bottom"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/earthrounded"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+
+
+    <ImageView
+        android:id="@+id/card2"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+
+    <ImageView
+        android:id="@+id/card3"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="250dp" />
+    <ImageView
+        android:id="@+id/card3bottom"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/marsrounded"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/card4"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="250dp" />
+    <ImageView
+        android:id="@+id/card4bottom"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/marsrounded"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/card5"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="400dp" />
+    <ImageView
+        android:id="@+id/card5bottom"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/sunround"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="400dp" />
+
+
+
+
+
+    <ImageView
+        android:id="@+id/card6"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="400dp" />
+    <ImageView
+        android:id="@+id/card6bottom"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/sunround"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="400dp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/card7"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="550dp" />
+    <ImageView
+        android:id="@+id/card7bottom"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/uranusround"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="550dp" />
+
+
+    <ImageView
+        android:id="@+id/card8"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/cardpicwithround"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="550dp" />
+
+    <ImageView
+        android:id="@+id/card8bottom"
+        android:layout_width="120dp"
+        android:layout_height="144dp"
+        android:src="@drawable/uranusround"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="550dp" />
+
+
+
+
+
+
+    <TableRow
+        android:layout_width="395dp"
+        android:layout_height="58dp"
+        android:background="@color/colorPrimary"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" >
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="time" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time" />
+    </TableRow>
+
+
+</android.support.constraint.ConstraintLayout>
