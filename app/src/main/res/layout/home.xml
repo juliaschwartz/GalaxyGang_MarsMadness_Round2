@@ -46,4 +46,18 @@
         android:typeface="monospace"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="43dp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enteryourname"
+        android:inputType="phone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="89dp" />
 </android.support.constraint.ConstraintLayout>
