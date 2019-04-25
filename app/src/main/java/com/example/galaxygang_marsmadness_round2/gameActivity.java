@@ -9,8 +9,8 @@ import android.widget.RadioButton;
 import android.content.Intent;
 
 /***************************************************
- * implementation for singleplayer_game8.xml
+ * implementation for game.xml
  **************************************************/
 
-public class game extends Activity{
+public class gameActivity extends Activity{
 }

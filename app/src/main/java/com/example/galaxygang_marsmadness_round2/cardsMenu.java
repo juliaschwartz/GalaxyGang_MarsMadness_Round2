@@ -62,7 +62,7 @@ public class cardsMenu extends Activity implements OnClickListener {
     }
 
     private void launchGame(int cards, String type) {
-        Intent game = new Intent(cardsMenu.this, game.class);
+        Intent game = new Intent(cardsMenu.this, gameActivity.class);
         Bundle b = new Bundle();
         b.putString("type",type);
         b.putInt("cards",cards);
