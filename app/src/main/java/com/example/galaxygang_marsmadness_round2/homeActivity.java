@@ -13,16 +13,13 @@ import android.content.Intent;
 
 public class homeActivity extends Activity implements OnClickListener{
 
-    private Button single;
-    private Button multi;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        single = (Button) findViewById(R.id.button);
-        multi =  (Button) findViewById(R.id.button3);
+        Button single = findViewById(R.id.single);
+        Button multi =  findViewById(R.id.multi);
 
         single.setOnClickListener(this);
         multi.setOnClickListener(this);
@@ -31,12 +28,12 @@ public class homeActivity extends Activity implements OnClickListener{
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.button :
+            case R.id.single :
             {
                 launchCards();
                 break;
             }
-            case R.id.button3 :
+            case R.id.multi :
             {
                 launchMulti();
                 break;

@@ -19,7 +19,7 @@ public class MainActivity extends Activity implements OnClickListener {
         setContentView(R.layout.launch);
 
         Button enter;
-        enter = (Button) findViewById(R.id.enter);
+        enter = findViewById(R.id.enter);
 
         enter.setOnClickListener(this);
     }

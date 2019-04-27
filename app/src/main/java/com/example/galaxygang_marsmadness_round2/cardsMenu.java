@@ -6,17 +6,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.content.Intent;
 
 /***************************************************
  * implementation for cards_menu.xml
  * ********************************************/
 
-public class cardsMenu extends Activity implements OnClickListener {
+public class cardsMenu extends Activity {
 
-    private RadioButton cards8;
-    private RadioButton cards16;
-    private RadioButton cards24;
+    private RadioGroup cardGroup;
 
     private String game_type;
 
@@ -25,40 +24,48 @@ public class cardsMenu extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cards_menu);
 
-        Button back = findViewById(R.id.back);
-        back.setOnClickListener(this);
-
-        Button start = findViewById(R.id.start);
-        start.setOnClickListener(this);
-
-        cards8  = findViewById(R.id.cardsbutton_8);
-        cards16 = findViewById(R.id.cardsbutton_16);
-        cards24 = findViewById(R.id.cardsbutton_24);
+        cardGroup = findViewById(R.id.radioGroup);
 
         Bundle b = getIntent().getExtras();
         if (b != null){
             game_type = b.getString("key");
         }
 
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goHome();
+            }
+        });
+
+        Button start = findViewById(R.id.start);
+        start.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedCards = cardGroup.getCheckedRadioButtonId();
+
+                switch (selectedCards) {
+                    case (R.id.cardsbutton_8) :
+                        launchGame(8, game_type);
+                        break;
+                    case (R.id.cardsbutton_16) :
+                        launchGame(16, game_type);
+                        break;
+                    case (R.id.cardsbutton_24) :
+                        launchGame(24, game_type);
+                }
+
+            }
+
+        });
+
+
+
     }
 
-    @Override
-    public void onClick(View v) {
-
-        switch(v.getId()) {
-            case R.id.back :
-                goHome();
-                break;
-            case R.id.start :
-                if (cards8.isChecked()) {
-                    launchGame(8, game_type);
-                } else if (cards16.isChecked()) {
-                    launchGame(16, game_type);
-                } else if (cards24.isChecked()) {
-                    launchGame(24, game_type);
-                }
-                break;
-        }
+    public void onRadioButtonClicked(View v) {
+        //wooohoeohfeohfe
     }
 
     private void launchGame(int cards, String type) {
