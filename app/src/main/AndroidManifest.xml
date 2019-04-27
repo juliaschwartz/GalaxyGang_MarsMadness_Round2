@@ -22,6 +22,7 @@
         <activity android:name=".multiMenu"></activity>
         <activity android:name=".gameActivity"></activity>
         <activity android:name=".WiFisearch"></activity>
+        <activity android:name=".nameActivity"></activity>
 
     </application>
 

@@ -6,12 +6,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.EditText;
 
 /***************************************************
  * implementation for home.xml
  **************************************************/
 
 public class homeActivity extends Activity implements OnClickListener{
+
+    String playerName ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,12 @@ public class homeActivity extends Activity implements OnClickListener{
 
         single.setOnClickListener(this);
         multi.setOnClickListener(this);
+
+        Bundle b = getIntent().getExtras();
+        if (b != null) {
+            playerName = b.getString("name");
+        }
+
     }
 
     @Override
@@ -30,27 +39,31 @@ public class homeActivity extends Activity implements OnClickListener{
         switch(v.getId()) {
             case R.id.single :
             {
-                launchCards();
+                launchCards(playerName);
                 break;
             }
             case R.id.multi :
             {
-                launchMulti();
+                launchMulti(playerName);
                 break;
             }
         }
     }
 
-    private void launchCards() {
+    private void launchCards(String name) {
         Intent Cards = new Intent(homeActivity.this, cardsMenu.class);
         Bundle b = new Bundle();
         b.putString("key","single");
+        b.putString("name",name);
         Cards.putExtras(b);
         startActivity(Cards);
     }
 
-    private void launchMulti() {
+    private void launchMulti(String name) {
         Intent mult = new Intent(homeActivity.this, multiMenu.class);
+        Bundle b = new Bundle();
+        b.putString("name",name);
+        mult.putExtras(b);
         startActivity(mult);
     }
 }

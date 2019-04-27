@@ -13,6 +13,8 @@ import android.content.Intent;
 
 public class multiMenu extends Activity implements OnClickListener{
 
+    private String player_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,11 @@ public class multiMenu extends Activity implements OnClickListener{
         computer.setOnClickListener(this);
         back.setOnClickListener(this);
 
+        Bundle b = getIntent().getExtras();
+        if (b != null){
+            player_name = b.getString("name");
+        }
+
     }
 
     @Override
@@ -34,31 +41,37 @@ public class multiMenu extends Activity implements OnClickListener{
 
         switch(v.getId()) {
             case R.id.back :
-                goHome();
+                goHome(player_name);
                 break;
             case R.id.findplayer :
-                findPlayer();
+                findPlayer(player_name);
                 break;
             case R.id.computer :
-                launchComp();
+                launchComp(player_name);
                 break;
         }
     }
 
-    private void goHome() {
+    private void goHome(String name) {
         Intent home = new Intent(multiMenu.this, homeActivity.class);
+        Bundle b = new Bundle();
+        b.putString("name",name);
+        home.putExtras(b);
         startActivity(home);
     }
 
-    private void findPlayer() {
+    private void findPlayer(String name) {
         Intent wifi = new Intent(multiMenu.this, WiFisearch.class);
+        Bundle b = new Bundle();
+        b.putString("name",name);
         startActivity(wifi);
     }
 
-    private void launchComp() {
+    private void launchComp(String name) {
         Intent comp = new Intent(multiMenu.this, cardsMenu.class);
         Bundle b = new Bundle();
         b.putString("key", "computer");
+        b.putString("name",name);
         comp.putExtras(b);
         startActivity(comp);
     }

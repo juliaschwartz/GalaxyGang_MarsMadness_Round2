@@ -19,6 +19,8 @@ public class cardsMenu extends Activity {
 
     private String game_type;
 
+    private String playerName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class cardsMenu extends Activity {
         Bundle b = getIntent().getExtras();
         if (b != null){
             game_type = b.getString("key");
+            playerName = b.getString("name");
         }
 
         Button back = findViewById(R.id.back);
@@ -47,13 +50,13 @@ public class cardsMenu extends Activity {
 
                 switch (selectedCards) {
                     case (R.id.cardsbutton_8) :
-                        launchGame(8, game_type);
+                        launchGame(8, game_type, playerName);
                         break;
                     case (R.id.cardsbutton_16) :
-                        launchGame(16, game_type);
+                        launchGame(16, game_type, playerName);
                         break;
                     case (R.id.cardsbutton_24) :
-                        launchGame(24, game_type);
+                        launchGame(24, game_type, playerName);
                 }
 
             }
@@ -68,11 +71,12 @@ public class cardsMenu extends Activity {
         //wooohoeohfeohfe
     }
 
-    private void launchGame(int cards, String type) {
+    private void launchGame(int cards, String type, String name) {
         Intent game = new Intent(cardsMenu.this, gameActivity.class);
         Bundle b = new Bundle();
         b.putString("type",type);
         b.putInt("cards",cards);
+        b.putString("name",name);
         game.putExtras(b);
         startActivity(game);
 

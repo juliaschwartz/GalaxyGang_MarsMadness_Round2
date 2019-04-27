@@ -26,13 +26,13 @@ public class MainActivity extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        launchHome();
+        launchNameScreen();
     }
 
 
-    private void launchHome() {
-        Intent home = new Intent(MainActivity.this, homeActivity.class);
-        startActivity(home);
+    private void launchNameScreen() {
+        Intent name = new Intent(MainActivity.this, nameActivity.class);
+        startActivity(name);
     }
 
 }

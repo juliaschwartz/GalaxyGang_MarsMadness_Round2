@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 public class WiFisearch extends Activity implements OnClickListener{
 
+    private String playerName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,33 +23,42 @@ public class WiFisearch extends Activity implements OnClickListener{
 
         back.setOnClickListener(this);
         next.setOnClickListener(this);
+
+        Bundle b = getIntent().getExtras();
+        if (b != null){
+            playerName = b.getString("name");
+        }
+
     }
 
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.back : {
-                goBack();
+                goBack(playerName);
                 break;
             }
             case R.id.next : {
-                launchCards();
+                launchCards(playerName);
                 break;
             }
 
         }
     }
 
-    private void launchCards() {
+    private void launchCards(String name) {
         Intent Cards = new Intent(WiFisearch.this, cardsMenu.class);
         Bundle b = new Bundle();
         b.putString("key","wifi");
+        b.putString("name",name);
         Cards.putExtras(b);
         startActivity(Cards);
     }
 
-    private void goBack() {
+    private void goBack(String name) {
         Intent back = new Intent(WiFisearch.this, multiMenu.class);
+        Bundle b = new Bundle();
+        b.putString("name",name);
         startActivity(back);
     }
 
