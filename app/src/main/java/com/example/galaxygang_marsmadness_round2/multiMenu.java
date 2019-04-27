@@ -64,13 +64,14 @@ public class multiMenu extends Activity implements OnClickListener{
         Intent wifi = new Intent(multiMenu.this, WiFisearch.class);
         Bundle b = new Bundle();
         b.putString("name",name);
+        wifi.putExtras(b);
         startActivity(wifi);
     }
 
     private void launchComp(String name) {
         Intent comp = new Intent(multiMenu.this, cardsMenu.class);
         Bundle b = new Bundle();
-        b.putString("key", "computer");
+        b.putString("key","computer");
         b.putString("name",name);
         comp.putExtras(b);
         startActivity(comp);

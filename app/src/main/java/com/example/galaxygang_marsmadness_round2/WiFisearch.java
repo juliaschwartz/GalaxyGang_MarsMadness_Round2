@@ -59,6 +59,7 @@ public class WiFisearch extends Activity implements OnClickListener{
         Intent back = new Intent(WiFisearch.this, multiMenu.class);
         Bundle b = new Bundle();
         b.putString("name",name);
+        back.putExtras(b);
         startActivity(back);
     }
 
