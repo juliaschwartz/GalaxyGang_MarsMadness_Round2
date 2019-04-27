@@ -14,7 +14,7 @@ import android.content.Intent;
  *
  * radio button checkbox - computer / local
  * onClick for local selected - pop up: searching for local opponents
- *      -will search bluetooth/wifi network for other phones
+ *      -will search wifi/wifi network for other phones
  *      -choose opponent from menu of other phones - opponent accepts on their phone - pop up closes
  *      -on screen: opponent's name is shown in text box
  *      -radio button appears: size - small/medium/large
@@ -84,7 +84,7 @@ public class multiMenu extends Activity implements OnClickListener{
                 }
                 break;
 
-            case (R.id.findplayer) : //when find player selected, go to bluetooth screen
+            case (R.id.findplayer) : //when find player selected, go to wifi screen
                 if (checked) {
                     findPlayer();
                 }

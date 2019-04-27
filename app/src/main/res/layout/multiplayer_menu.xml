@@ -78,7 +78,7 @@
             android:visibility="invisible"/>
     </RadioGroup>
 
-    <!-- this is what shows up after you have found an opponent with bluetooth -->
+    <!-- this is what shows up after you have found an opponent with wifi -->
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
