@@ -2,13 +2,12 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:background="@drawable/spacebackgroundimage"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- this is for the initial option, used to
-    find another player, or choose to play against computer -->
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,11 +21,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/cardsbutton_8"
+            android:id="@+id/findaplayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="FIND A PLAYER"
+            android:text="@string/find_a_player"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -34,11 +33,11 @@
 
 
         <RadioButton
-            android:id="@+id/cardsbutton_24"
+            android:id="@+id/playcomputer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="PLAY THE COMPUTER"
+            android:text="@string/play_the_computer"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="35sp"
             android:textStyle="bold"
