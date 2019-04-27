@@ -38,7 +38,7 @@ public class cardsMenu extends Activity {
         back.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                goHome();
+                goHome(playerName);
             }
         });
 
@@ -82,8 +82,11 @@ public class cardsMenu extends Activity {
 
     }
 
-    private void goHome() {
+    private void goHome(String name) {
         Intent goHome = new Intent(cardsMenu.this, homeActivity.class);
+        Bundle b = new Bundle();
+        b.putString("name",name);
+        goHome.putExtras(b);
         startActivity(goHome);
     }
 

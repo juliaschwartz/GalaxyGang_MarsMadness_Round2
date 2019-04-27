@@ -17,6 +17,7 @@ import android.widget.TextView;
  * for example:
  * 8            24
  * Single       Computer
+ * joe          joe
  **************************************************/
 
 public class gameActivity extends Activity{
@@ -30,15 +31,17 @@ public class gameActivity extends Activity{
         TextView dummy = findViewById(R.id.textView4);
         int cards = 0;
         String type = "type";
+        String name = "player";
 
         Bundle b = getIntent().getExtras();
         if (b != null){
             cards = b.getInt("cards");
             type = b.getString("type");
+            name = b.getString("name");
         }
 
         String cardString = Integer.toString(cards);
-        String dummytext = cards+"\n"+type;
+        String dummytext = cardString+"\n"+type+"\n"+name;
 
         dummy.setText(dummytext);
 

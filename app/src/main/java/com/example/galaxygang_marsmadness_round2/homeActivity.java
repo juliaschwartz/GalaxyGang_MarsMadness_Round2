@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /***************************************************
  * implementation for home.xml
@@ -14,7 +15,7 @@ import android.widget.EditText;
 
 public class homeActivity extends Activity implements OnClickListener{
 
-    String playerName ;
+    private String playerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,9 @@ public class homeActivity extends Activity implements OnClickListener{
         if (b != null) {
             playerName = b.getString("name");
         }
+
+        TextView nameText = findViewById(R.id.nameText);
+        nameText.setText(playerName);
 
     }
 

@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /***************************************************
  * implementation for namescreen.xml
@@ -14,6 +15,8 @@ import android.widget.EditText;
 
 public class nameActivity extends Activity implements OnClickListener {
 
+
+    private EditText inputName;
     private String playerName;
 
     @Override
@@ -25,13 +28,13 @@ public class nameActivity extends Activity implements OnClickListener {
         next = findViewById(R.id.next);
         next.setOnClickListener(this);
 
-        EditText inputName = findViewById(R.id.name_input);
-        playerName = inputName.getText().toString();
+        inputName = findViewById(R.id.name_input);
 
     }
 
     @Override
     public void onClick(View v) {
+        playerName = inputName.getText().toString();
         launchHome(playerName);
     }
 
