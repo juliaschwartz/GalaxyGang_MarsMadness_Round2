@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/spacebackgroundimage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="371dp"
+        android:layout_height="641dp"
+        android:background="@color/colorAccent"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="74dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:weightSum="4"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_11"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+
+                    <ImageView
+                        android:id="@+id/iv_12"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:arc="@drawable/ic_back"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="352dp"
+        android:layout_height="621dp"
+        android:background="@color/colorAccent"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="85dp"/>
+
+</android.support.constraint.ConstraintLayout>
