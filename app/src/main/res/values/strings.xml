@@ -14,4 +14,10 @@
     <string name="time">Time</string>
     <string name="enter_your_name">ENTER YOUR NAME:</string>
     <string name="enteryourname">Enter your name</string>
+    <string name="start_mission">START MISSION </string>
+    <string name="blast_off">BLAST OFF </string>
+    <string name="multiplayer">MULTIPLAYER</string>
+    <string name="single_player">SINGLE PLAYER</string>
+    <string name="play_the_computer">PLAY THE COMPUTER</string>
+    <string name="find_a_player">FIND A PLAYER</string>
 </resources>
