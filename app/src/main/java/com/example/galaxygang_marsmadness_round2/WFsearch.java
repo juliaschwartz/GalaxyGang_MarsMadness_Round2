@@ -53,37 +53,43 @@ public class WFsearch extends MainActivity {
         manager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
         channel = manager.initialize(this, getMainLooper(), null);
     }
-};
 
 
-//creation of a new receiver class --> listens for changes in p2p wifi state
-//@Override --> Annotations not allowed here?
-public void onReceive(Context context, Intent intent) { //broadcast receiver
+
+    //creation of a new receiver class --> listens for changes in p2p wifi state
+    //@Override //--> Annotations not allowed here, method does not override method from super
+    public void onReceive(Context context, Intent intent) { //broadcast receiver
         String action = intent.getAction();
         if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
             // Determine if Wifi P2P mode is enabled or not, alert
             // the Activity.
+            int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
+            if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+                activity.setIsWifiP2pEnabled(true);
+            } else {
+                activity.setIsWifiP2pEnabled(false);
+            }
+        } else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
 
-        int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
-        if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
-            activity.setIsWifiP2pEnabled(true);
-        } else {
-            activity.setIsWifiP2pEnabled(false);
-        }else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
-            // Changed peer list! make an error?
+            // The peer list has changed! We should probably do something about
+            // that.
+
         } else if (WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
 
-        // Changed connection state! make an error?
+            // Connection state changed! We should probably do something about
+            // that.
 
         } else if (WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION.equals(action)) {
             DeviceListFragment fragment = (DeviceListFragment) activity.getFragmentManager()
-                .findFragmentById(R.id.frag_list);
+                    .findFragmentById(R.id.frag_list);
             fragment.updateThisDevice((WifiP2pDevice) intent.getParcelableExtra(
-                WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
-        }
-};
+                    WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
 
-/** register the BroadcastReceiver with the intent values to be matched */
+        }
+
+}
+
+/** register the BroadcastReceiver with the intent values to be matched  */
 @Override
 public void onResume() {
         super.onResume();
@@ -97,50 +103,54 @@ public void onPause() {
         unregisterReceiver(receiver);
         }
 
-        manager.discoverPeers(channel, new WifiP2pManager.ActionListener() {
+ //manager.discoverPeers(channel, new WifiP2pManager.ActionListener())
 
-@Override
-public void onSuccess() {
+  //  {
+
+        //@Override
+      //  public void onSuccess () {
         // Code for when the discovery initiation is successful goes here.
         // No services have actually been discovered yet, so this method
         // can often be left blank. Code for peer discovery goes in the
         // onReceive method, detailed below.
-        }
+   // }
 
-@Override
-public void onFailure(int reasonCode) {
+       // @Override
+       // public void onFailure(int reasonCode){
         // Code for when the discovery initiation fails goes here.
         // Alert the user that something went wrong.
-        }
-        });
+  //  }
+
+   // };
+ //"  Keep in mind that this only initiates peer discovery
 
 private List<WifiP2pDevice> peers = new ArrayList<WifiP2pDevice>();
         ...
 
 private PeerListListener peerListListener = new PeerListListener() {
-@Override
-public void onPeersAvailable(WifiP2pDeviceList peerList) {
+    @Override
+    public void onPeersAvailable(WifiP2pDeviceList peerList) {
 
         List<WifiP2pDevice> refreshedPeers = peerList.getDeviceList();
         if (!refreshedPeers.equals(peers)) {
-        peers.clear();
-        peers.addAll(refreshedPeers);
+            peers.clear();
+            peers.addAll(refreshedPeers);
 
-        // If an AdapterView is backed by this data, notify it
-        // of the change. For instance, if you have a ListView of
-        // available peers, trigger an update.
-        ((WiFiPeerListAdapter) getListAdapter()).notifyDataSetChanged();
+            // If an AdapterView is backed by this data, notify it
+            // of the change. For instance, if you have a ListView of
+            // available peers, trigger an update.
+            ((WiFiPeerListAdapter) getListAdapter()).notifyDataSetChanged();
 
-        // Perform any other updates needed based on the new list of
-        // peers connected to the Wi-Fi P2P network.
+            // Perform any other updates needed based on the new list of
+            // peers connected to the Wi-Fi P2P network.
         }
 
         if (peers.size() == 0) {
-        Log.d(WiFiDirectActivity.TAG, "No devices found");
-        return;
+            Log.d(WiFiDirectActivity.TAG, "No devices found");
+            return;
         }
-        }
-        }
+    }
+}
 
 public void onReceive(Context context, Intent intent) {
         ...
