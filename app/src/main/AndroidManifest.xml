@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.galaxygang_marsmadness_round2">
+    package="com.example.cleanmarsmadness">
 
     <application
         android:allowBackup="true"
@@ -9,21 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".local_multiplayer_game">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".homeActivity"></activity>
-        <activity android:name=".cardsMenu"></activity>
-        <activity android:name=".multiMenu"></activity>
-        <activity android:name=".gameActivity"></activity>
-        <activity android:name=".WiFisearch"></activity>
-        <activity android:name=".nameActivity"></activity>
-
     </application>
 
 </manifest>
