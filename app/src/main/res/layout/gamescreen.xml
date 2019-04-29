@@ -6,17 +6,17 @@
     android:layout_height="match_parent">
 
     <include
-        layout="@layout/cards_8"
+        layout="@layout/cards8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <include
-        layout="@layout/sixteen"
+        layout="@layout/cards16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <include
-        layout="@layout/twentty"
+        layout="@layout/cards20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </android.support.constraint.ConstraintLayout>
