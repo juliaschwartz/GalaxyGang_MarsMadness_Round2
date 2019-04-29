@@ -19,7 +19,7 @@
         android:layout_marginRight="119dp"
         android:background="@android:color/transparent"
         android:onClick="onRadioButtonClicked"
-        android:text="FIND A PLAYER"
+        android:text="PLAY A FRIEND"
         android:textColor="@color/colorPrimary"
         android:textSize="35sp"
         android:textStyle="bold|italic"
