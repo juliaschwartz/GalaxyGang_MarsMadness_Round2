@@ -13,27 +13,26 @@ import android.content.Intent;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-    private Button enter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.launch);
 
-        enter = (Button) findViewById(R.id.enter);
+        Button enter;
+        enter = findViewById(R.id.enter);
 
         enter.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        launchHome();
+        launchNameScreen();
     }
 
 
-    private void launchHome() {
-        Intent home = new Intent(MainActivity.this, homeActivity.class);
-        startActivity(home);
+    private void launchNameScreen() {
+        Intent name = new Intent(MainActivity.this, nameActivity.class);
+        startActivity(name);
     }
 
 }

@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /***************************************************
  * implementation for home.xml
@@ -13,44 +15,59 @@ import android.content.Intent;
 
 public class homeActivity extends Activity implements OnClickListener{
 
-    private Button single;
-    private Button multi;
+    private String playerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        single = (Button) findViewById(R.id.button);
-        multi =  (Button) findViewById(R.id.button3);
+        Button single = findViewById(R.id.single);
+        Button multi =  findViewById(R.id.multi);
 
         single.setOnClickListener(this);
         multi.setOnClickListener(this);
+
+        Bundle b = getIntent().getExtras();
+        if (b != null) {
+            playerName = b.getString("name");
+        }
+
+        TextView nameText = findViewById(R.id.nameText);
+        nameText.setText(playerName);
+
     }
 
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.button :
+            case R.id.single :
             {
-                launchSingle();
+                launchCards(playerName);
                 break;
             }
-            case R.id.button3 :
+            case R.id.multi :
             {
-                launchMulti();
+                launchMulti(playerName);
                 break;
             }
         }
     }
 
-    private void launchSingle() {
-        Intent sing = new Intent(homeActivity.this, singleMenu.class);
-        startActivity(sing);
+    private void launchCards(String name) {
+        Intent Cards = new Intent(homeActivity.this, cardsMenu.class);
+        Bundle b = new Bundle();
+        b.putString("key","single");
+        b.putString("name",name);
+        Cards.putExtras(b);
+        startActivity(Cards);
     }
 
-    private void launchMulti() {
+    private void launchMulti(String name) {
         Intent mult = new Intent(homeActivity.this, multiMenu.class);
+        Bundle b = new Bundle();
+        b.putString("name",name);
+        mult.putExtras(b);
         startActivity(mult);
     }
 }
