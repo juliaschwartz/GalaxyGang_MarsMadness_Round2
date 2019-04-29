@@ -21,10 +21,10 @@ public class gameActivity extends AppCompatActivity {
 
     ImageView iv_11, iv_12, iv_13, iv_14,iv_21, iv_22, iv_23, iv_24, iv_31, iv_32, iv_33, iv_34, iv_41, iv_42, iv_43, iv_44;
 
-    //array for the images
+    //array for the cards16
     Integer[] cardsArray = {101, 102, 103, 104, 105, 106, 107, 108, 201, 202, 203, 204, 205, 206, 207, 208};
 
-    //actual images
+    //actual cards16
     int image101, image102, image103, image104, image105, image106, image107, image108,
             image201, image202, image203, image204, image205, image206, image207, image208;
 
@@ -35,16 +35,28 @@ public class gameActivity extends AppCompatActivity {
     int turn = 1;
     int playerPoints = 0, cpuPoints = 0;
 
+    String p1_name = "P1";
+    int deck = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
 
-        String p1_name = "P1";
         Bundle b = getIntent().getExtras();
         if (b != null){
             p1_name = b.getString("name");
+            deck = b.getInt("cards");
         }
+
+
+        View deck16 = findViewById(R.id.deck16);
+
+        switch(deck){
+            case(16) :
+                deck16.setVisibility(View.VISIBLE);
+        }
+
 
         tv_p1 = findViewById(R.id.tv_p1);
         tv_p2 = findViewById(R.id.tv_p2);
@@ -83,10 +95,10 @@ public class gameActivity extends AppCompatActivity {
         iv_43.setTag("14");
         iv_44.setTag("15");
 
-        //load the card images
+        //load the card cards16
         frontOfCardResources();
 
-        //shuffle the images
+        //shuffle the cards16
         Collections.shuffle(Arrays.asList(cardsArray));
 
         //changing the color of the second player to show inactivity
@@ -316,7 +328,7 @@ public class gameActivity extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    //check if the selected images are equal
+                    //check if the selected cards16 are equal
                     calculate();
                 }
             }, 1000);
@@ -326,7 +338,7 @@ public class gameActivity extends AppCompatActivity {
 
 
     private void calculate() {
-        //if images are equal, remove them and add point
+        //if cards16 are equal, remove them and add point
         if (firstCard == secondCard){
             if (clickedFirst == 0) {
                 iv_11.setVisibility(View.INVISIBLE);
@@ -399,7 +411,7 @@ public class gameActivity extends AppCompatActivity {
             //add points to the correct player
             if (turn ==1){
                 playerPoints++;
-                tv_p1.setText("P1: " + playerPoints);
+                tv_p1.setText(p1_name+": "+ playerPoints);
             } else if (turn ==2) {
                 cpuPoints++;
                 tv_p2.setText("P2: " + cpuPoints);
@@ -426,10 +438,10 @@ public class gameActivity extends AppCompatActivity {
             if(turn == 1){
                 turn = 2;
                 tv_p1.setTextColor(Color.GRAY);
-                tv_p2.setTextColor(Color.BLACK);
+                tv_p2.setTextColor(Color.WHITE);
             } else if(turn == 2){
                 turn = 1;
-                tv_p1.setTextColor(Color.BLACK);
+                tv_p1.setTextColor(Color.WHITE);
                 tv_p2.setTextColor(Color.GRAY);
             }
         }
