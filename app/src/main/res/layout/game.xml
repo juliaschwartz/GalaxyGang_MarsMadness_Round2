@@ -40,7 +40,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="@string/p1_0"
-        android:textColor="#FCFAFA"
+        android:textColor="@color/colorPrimaryDark"
         android:textColorLink="#F8F7F7"
         android:textSize="32sp" />
 
@@ -55,7 +55,7 @@
         android:layout_toEndOf="@+id/tv_p1"
         android:layout_toRightOf="@+id/tv_p1"
         android:text="@string/p2_0"
-        android:textColor="#FAF9F9"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="32sp" />
 
 </RelativeLayout>
