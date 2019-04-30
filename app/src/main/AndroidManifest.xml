@@ -48,6 +48,11 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"></meta-data>
+            <paths xmlns:android="http://schemas.android.com/apk/res/android">
+                <files-path name="my_images" path="images/"/>
+
+            </paths>
+
         </provider>
 
         <activity android:name=".local_multiplayer_game">

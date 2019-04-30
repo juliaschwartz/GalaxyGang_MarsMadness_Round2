@@ -58,7 +58,7 @@ public class gameActivity extends AppCompatActivity {
         }
 
         View deck16 = findViewById(R.id.deck16);
-        View deck8 = findViewById(R.id.deck8);
+        View deck8  = findViewById(R.id.deck8);
         View deck20 = findViewById(R.id.deck20);
 
         switch(deck){
