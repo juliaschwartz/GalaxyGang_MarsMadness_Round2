@@ -38,6 +38,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--Configure FileProvider in the Manifest-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
         <activity android:name=".local_multiplayer_game">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +57,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity android:name=".homeActivity"></activity>
+        <activity android:name=".cardsMenu"></activity>
+        <activity android:name=".gameActivity"></activity>
+        <activity android:name=".WiFisearch"></activity>
+        <activity android:name=".nameActivity"></activity>
+        <activity android:name=".Camera"></activity>
+
+    </application>
 
 </manifest>
