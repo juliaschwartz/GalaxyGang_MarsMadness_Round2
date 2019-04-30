@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.galaxygang_marsmadness_round2">
 
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +16,8 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
+                <!--specify an intent filter in the manifest for deep linking, now indexable by Google search -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,6 +28,8 @@
         <activity android:name=".gameActivity"></activity>
         <activity android:name=".WiFisearch"></activity>
         <activity android:name=".nameActivity"></activity>
+
+
 
     </application>
 
