@@ -19,6 +19,18 @@
         android:required="true"
         android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <!--Include permission for camera and camera features-->
+    <uses-permission
+        android:name="android.permission.CAMERA"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+    <!--Add storage permission-->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

@@ -14,6 +14,7 @@ import java.util.Date;
 import android.os.Environment;
 
 
+
 public class Camera extends Activity{
     //extends activity allows you to use instances of app.Activity from java import
 
