@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     android:background="@drawable/spacebackgroundimage">
 
+    //button to turn wifi on and off
+
+    <Button
+        android:id="@+id/onOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Wifi On"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="607dp" />
+
+    //back button
 
     <Button
         android:id="@+id/back"
@@ -17,45 +30,56 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="162dp"
         android:layout_marginRight="162dp"
-        android:layout_marginBottom="66dp"
+        android:layout_marginBottom="76dp"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/next" />
 
+    //next button
+
+
+
+    //"discovery" button
+
     <Button
-        android:id="@+id/next"
+        android:id="@+id/discover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginRight="161dp"
-        android:layout_marginBottom="53dp"
-        android:text="Next"
-        app:layout_constraintBottom_toTopOf="@+id/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        android:layout_alignBaseline="@+id/onOff"
+        android:layout_alignBottom="@+id/onOff"
+        android:layout_centerHorizontal="true"
+        android:text="discover"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="607dp" />
+
+    //list view for potential adversaries
+
+    <ListView
+        android:id="@+id/peerListView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/onOff"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_orange_light"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="192dp" />
+
+</android.support.constraint.ConstraintLayout>
+
+    //for connection Status
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="262dp"
-        android:layout_height="207dp"
-        android:layout_marginStart="74dp"
-        android:layout_marginLeft="74dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
-        android:layout_marginBottom="85dp"
-        android:text="TextView"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="This is where the wifi search would go" />
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/connectionStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="Connection Status"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="italic" />
