@@ -54,8 +54,8 @@ public class cardsMenu extends Activity {
                     case (R.id.cardsbutton_16) :
                         launchGame(16, game_type, playerName);
                         break;
-                    case (R.id.cardsbutton_24) :
-                        launchGame(24, game_type, playerName);
+                    case (R.id.cardsbutton_20) :
+                        launchGame(20, game_type, playerName);
                 }
 
             }
