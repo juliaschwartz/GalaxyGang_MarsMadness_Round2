@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".homeActivity"></activity>
+        <activity android:name=".cardsMenu"></activity>
+        <activity android:name=".multiMenu"></activity>
+        <activity android:name=".gameActivity"></activity>
+        <activity android:name=".WiFisearch"></activity>
+        <activity android:name=".nameActivity"></activity>
+
     </application>
 
 </manifest>
