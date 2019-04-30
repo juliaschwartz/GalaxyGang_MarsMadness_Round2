@@ -9,24 +9,24 @@
 
 
     <Button
-        android:id="@+id/multi"
+        android:id="@+id/computer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="59dp"
         android:layout_marginLeft="59dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="244dp"
         android:background="@color/colorPrimary"
-        android:text=" Multiplayer "
+        android:text="Play the computer"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         android:textStyle="bold|italic"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/single" />
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/single"
@@ -37,14 +37,14 @@
         android:layout_marginTop="341dp"
         android:layout_marginEnd="37dp"
         android:layout_marginRight="37dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginBottom="32dp"
         android:background="@color/colorPrimary"
         android:text=" Single Player "
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         android:textStyle="bold|italic"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/multi"
+        app:layout_constraintBottom_toTopOf="@+id/computer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -84,6 +84,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Welcome" />
+
+    <Button
+        android:id="@+id/local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="Play a friend on this phone"
+        app:layout_constraintBottom_toTopOf="@+id/wifi"
+        app:layout_constraintTop_toBottomOf="@+id/computer"
+        tools:layout_editor_absoluteX="89dp" />
+
+    <Button
+        android:id="@+id/wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginRight="118dp"
+        android:layout_marginBottom="80dp"
+        android:text="Play a friend online"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/local" />
 
 
 </android.support.constraint.ConstraintLayout>

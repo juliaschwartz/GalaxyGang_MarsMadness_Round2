@@ -36,7 +36,10 @@ public class gameActivity extends AppCompatActivity {
     int playerPoints = 0, cpuPoints = 0;
 
     String p1_name = "P1";
+    String p2_name = "Friend";
+    String type = "local";
     int deck = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +50,35 @@ public class gameActivity extends AppCompatActivity {
         if (b != null){
             p1_name = b.getString("name");
             deck = b.getInt("cards");
+            type = b.getString("type");
         }
 
+        if (type.equals("computer")) {
+            p2_name = "Computer";
+        }
 
         View deck16 = findViewById(R.id.deck16);
+        View deck8 = findViewById(R.id.deck8);
+        View deck20 = findViewById(R.id.deck20);
 
         switch(deck){
             case(16) :
                 deck16.setVisibility(View.VISIBLE);
+                break;
+            case(8) :
+                deck8.setVisibility(View.VISIBLE);
+                break;
+            case(20) :
+                deck20.setVisibility(View.VISIBLE);
+                break;
         }
 
 
         tv_p1 = findViewById(R.id.tv_p1);
         tv_p2 = findViewById(R.id.tv_p2);
+
+        tv_p1.setText(p1_name+": "+ playerPoints);
+        tv_p2.setText(p2_name+": "+cpuPoints);
 
         iv_11 = findViewById(R.id.iv_11);
         iv_12 = findViewById(R.id.iv_12);
@@ -103,9 +122,6 @@ public class gameActivity extends AppCompatActivity {
 
         //changing the color of the second player to show inactivity
         tv_p2.setTextColor(Color.GRAY);
-
-        //put player name in P1
-        tv_p1.setText(p1_name);
 
         iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -335,8 +351,6 @@ public class gameActivity extends AppCompatActivity {
         }
 
     }
-
-
     private void calculate() {
         //if cards16 are equal, remove them and add point
         if (firstCard == secondCard){
@@ -409,12 +423,13 @@ public class gameActivity extends AppCompatActivity {
             }
 
             //add points to the correct player
+
             if (turn ==1){
                 playerPoints++;
                 tv_p1.setText(p1_name+": "+ playerPoints);
             } else if (turn ==2) {
                 cpuPoints++;
-                tv_p2.setText("P2: " + cpuPoints);
+                tv_p2.setText(p2_name+": "+ cpuPoints);
             }
         } else {
             iv_11.setImageResource(R.drawable.ic_back);
@@ -486,19 +501,27 @@ public class gameActivity extends AppCompatActivity {
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(gameActivity.this);
             alertDialogBuilder
-                    .setMessage("GAME OVER!\nP1: " + playerPoints + "\nP2: " + cpuPoints)
+                    .setMessage("GAME OVER!\n"+p1_name+": " + playerPoints + "\n"+p2_name+": "+ cpuPoints)
                     .setCancelable(false)
-                    .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
+                    .setPositiveButton("PLAY AGAIN", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent intent = new Intent(getApplicationContext(), gameActivity.class);
-                            startActivity(intent);
+                            Intent restart = new Intent(gameActivity.this, cardsMenu.class);
+                            Bundle new_b = new Bundle();
+                            new_b.putString("name",p1_name);
+                            restart.putExtras(new_b);
+                            startActivity(restart);
                             finish();
                         }
                     })
-                    .setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("MENU", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent exit = new Intent(gameActivity.this, homeActivity.class);
+                            Bundle exit_b = new Bundle();
+                            exit_b.putString("name",p1_name);
+                            exit.putExtras(exit_b);
+                            startActivity(exit);
                             finish();
                         }
                     });
@@ -506,7 +529,6 @@ public class gameActivity extends AppCompatActivity {
             alertDialog.show();
         }
     }
-
     private void frontOfCardResources(){
         image101 = R.drawable.ic_image101;
         image102 = R.drawable.ic_image102;
