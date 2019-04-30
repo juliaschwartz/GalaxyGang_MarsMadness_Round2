@@ -2,13 +2,16 @@ package com.example.galaxygang_marsmadness_round2;
 //import the pre-existing intent class in java
 import android.content.Intent;
 import android.provider.MediaStore;
-import android.content.Context;
-import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ImageView;
 
 
 public class Camera extends Activity{
     //extends activity allows you to use instances of app.Activity from java import
+
+    ImageView image;
 
     //function that invoke an intent to capture a photo
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -31,10 +34,7 @@ public class Camera extends Activity{
             //the photo is stored in the extras under the key "data", so retrieve that
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+            image.setImageBitmap(imageBitmap);
         }
     }
-
-
-
 }
