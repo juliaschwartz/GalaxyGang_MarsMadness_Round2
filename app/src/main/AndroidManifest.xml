@@ -5,6 +5,9 @@
 
     <uses-feature android:name="android.hardware.camera"
         android:required="false" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- implicitly allows all external storage to write the data, and read is included -->
+
 
     <application
         android:allowBackup="true"
@@ -21,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".Camera"></activity>
         <activity android:name=".homeActivity"></activity>
         <activity android:name=".cardsMenu"></activity>
         <activity android:name=".multiMenu"></activity>
