@@ -36,7 +36,7 @@ public class gameActivity extends AppCompatActivity {
     int playerPoints = 0, cpuPoints = 0;
 
     String p1_name = "P1";
-    String p2_name = "P2";
+    String p2_name = "Friend";
     String type = "local";
     int deck = 0;
 
@@ -351,8 +351,6 @@ public class gameActivity extends AppCompatActivity {
         }
 
     }
-
-
     private void calculate() {
         //if cards16 are equal, remove them and add point
         if (firstCard == secondCard){
@@ -431,7 +429,7 @@ public class gameActivity extends AppCompatActivity {
                 tv_p1.setText(p1_name+": "+ playerPoints);
             } else if (turn ==2) {
                 cpuPoints++;
-                tv_p2.setText(p2_name + cpuPoints);
+                tv_p2.setText(p2_name+": "+ cpuPoints);
             }
         } else {
             iv_11.setImageResource(R.drawable.ic_back);
@@ -503,15 +501,14 @@ public class gameActivity extends AppCompatActivity {
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(gameActivity.this);
             alertDialogBuilder
-                    .setMessage("GAME OVER!\nP1: " + playerPoints + "\nP2: " + cpuPoints)
+                    .setMessage("GAME OVER!\n"+p1_name+": " + playerPoints + "\n"+p2_name+": "+ cpuPoints)
                     .setCancelable(false)
-                    .setPositiveButton("RESTART", new DialogInterface.OnClickListener() {
+                    .setPositiveButton("PLAY AGAIN", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent restart = new Intent(gameActivity.this, gameActivity.class);
+                            Intent restart = new Intent(gameActivity.this, cardsMenu.class);
                             Bundle new_b = new Bundle();
                             new_b.putString("name",p1_name);
-                            new_b.putInt("cards",deck);
                             restart.putExtras(new_b);
                             startActivity(restart);
                             finish();
@@ -532,7 +529,6 @@ public class gameActivity extends AppCompatActivity {
             alertDialog.show();
         }
     }
-
     private void frontOfCardResources(){
         image101 = R.drawable.ic_image101;
         image102 = R.drawable.ic_image102;

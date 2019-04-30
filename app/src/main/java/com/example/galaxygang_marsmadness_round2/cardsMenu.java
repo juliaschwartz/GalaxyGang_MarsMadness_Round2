@@ -29,8 +29,8 @@ public class cardsMenu extends Activity {
 
         Bundle b = getIntent().getExtras();
         if (b != null){
-            game_type = b.getString("key");
-            playerName = b.getString("name");
+            game_type = b.getString("key");     //get type of game
+            playerName = b.getString("name");   //get player name
         }
 
         Button back = findViewById(R.id.back);
@@ -70,6 +70,7 @@ public class cardsMenu extends Activity {
         //wooohoeohfeohfe
     }
 
+    //this function launches the game activity
     private void launchGame(int cards, String type, String name) {
         Intent game = new Intent(cardsMenu.this, gameActivity.class);
         Bundle b = new Bundle();
@@ -81,6 +82,7 @@ public class cardsMenu extends Activity {
 
     }
 
+    //this function goes back to home menu
     private void goHome(String name) {
         Intent goHome = new Intent(cardsMenu.this, homeActivity.class);
         Bundle b = new Bundle();

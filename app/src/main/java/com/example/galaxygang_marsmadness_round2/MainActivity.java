@@ -9,6 +9,8 @@ import android.content.Intent;
 
 /***************************************************
  * implementation for launch.xml
+ * this is the welcome screen to the app
+ *main purpose is to look nice
  **************************************************/
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -24,11 +26,11 @@ public class MainActivity extends Activity implements OnClickListener {
         enter.setOnClickListener(this);
     }
 
+    //the only activity on this screen is going to the name screen when the enter button is clicked
     @Override
     public void onClick(View v) {
         launchNameScreen();
     }
-
 
     private void launchNameScreen() {
         Intent name = new Intent(MainActivity.this, nameActivity.class);

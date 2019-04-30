@@ -56,7 +56,7 @@ public class WiFisearch extends Activity implements OnClickListener{
     }
 
     private void goBack(String name) {
-        Intent back = new Intent(WiFisearch.this, multiMenu.class);
+        Intent back = new Intent(WiFisearch.this, homeActivity.class);
         Bundle b = new Bundle();
         b.putString("name",name);
         back.putExtras(b);
