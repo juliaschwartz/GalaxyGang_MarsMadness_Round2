@@ -1,13 +1,39 @@
 package com.example.galaxygang_marsmadness_round2;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity {
+/***************************************************
+ * implementation for launch.xml
+ **************************************************/
+
+public class MainActivity extends Activity implements OnClickListener {
+
+    private Button enter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.launch);
+
+        enter = (Button) findViewById(R.id.enter);
+
+        enter.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v) {
+        launchHome();
+    }
+
+
+    private void launchHome() {
+        Intent home = new Intent(MainActivity.this, homeActivity.class);
+        startActivity(home);
+    }
+
 }
