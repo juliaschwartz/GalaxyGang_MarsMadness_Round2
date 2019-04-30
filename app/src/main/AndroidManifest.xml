@@ -9,6 +9,7 @@
     <!-- implicitly allows all external storage to write the data, and read is included -->
 
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,12 +17,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <paths xmlns:android="http://schemas.android.com/apk/res/android">
+            <external-path android:name="my_images" android:path="Android/data/com.example.package.name/files/Pictures" />
+        </paths>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.galaxygang_marsmadness_round2"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
                 <!--specify an intent filter in the manifest for deep linking, now indexable by Google search -->
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
         <activity android:name=".Camera"></activity>

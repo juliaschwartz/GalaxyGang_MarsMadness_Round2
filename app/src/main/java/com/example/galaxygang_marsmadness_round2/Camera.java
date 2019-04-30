@@ -20,16 +20,16 @@ public class Camera extends Activity{
     ImageView image;
 
     //function that invoke an intent to capture a photo
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+  //  static final int REQUEST_IMAGE_CAPTURE = 1;
+  //  private void dispatchTakePictureIntent() {
+  //      Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+  //      if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             // returns the first activity component that can handle the intent.
             // if you start the startActivityForResult function without intent, the
             // app will crash.
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
+    //        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+   //     }
+   // }
 
 
     //Do something with the photo!
