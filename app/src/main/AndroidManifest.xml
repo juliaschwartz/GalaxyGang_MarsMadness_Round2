@@ -19,8 +19,8 @@
 
         <activity android:name=".homeActivity"></activity>
         <activity android:name=".cardsMenu"></activity>
-        <activity android:name=".multiMenu"></activity>
-        <activity android:name=".gameActivity"></activity>
+        <activity android:name=".multiActivity"></activity>
+        <activity android:name=".singleActivity"></activity>
         <activity android:name=".WiFisearch"></activity>
         <activity android:name=".nameActivity"></activity>
 

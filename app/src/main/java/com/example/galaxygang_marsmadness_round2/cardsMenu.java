@@ -29,8 +29,8 @@ public class cardsMenu extends Activity {
 
         Bundle b = getIntent().getExtras();
         if (b != null){
-            game_type = b.getString("key");
-            playerName = b.getString("name");
+            game_type = b.getString("key");     //get type of multigame
+            playerName = b.getString("name");   //get player name
         }
 
         Button back = findViewById(R.id.back);
@@ -54,8 +54,8 @@ public class cardsMenu extends Activity {
                     case (R.id.cardsbutton_16) :
                         launchGame(16, game_type, playerName);
                         break;
-                    case (R.id.cardsbutton_24) :
-                        launchGame(24, game_type, playerName);
+                    case (R.id.cardsbutton_20) :
+                        launchGame(20, game_type, playerName);
                 }
 
             }
@@ -70,23 +70,37 @@ public class cardsMenu extends Activity {
         //wooohoeohfeohfe
     }
 
+    //this function launches the multigame activity
     private void launchGame(int cards, String type, String name) {
-        Intent game = new Intent(cardsMenu.this, gameActivity.class);
-        Bundle b = new Bundle();
-        b.putString("type",type);
-        b.putInt("cards",cards);
-        b.putString("name",name);
-        game.putExtras(b);
-        startActivity(game);
+
+        if (type.equals("single")) {
+            Intent game = new Intent(cardsMenu.this, singleActivity.class);
+            Bundle b = new Bundle();
+            b.putInt("cards", cards);
+            b.putString("name", name);
+            game.putExtras(b);
+            startActivity(game);
+        } else if (type.equals("computer") || type.equals("local")) {
+            Intent game = new Intent(cardsMenu.this, multiActivity.class);
+            Bundle b = new Bundle();
+            b.putString("type", type);
+            b.putInt("cards", cards);
+            b.putString("name", name);
+            game.putExtras(b);
+            startActivity(game);
+            //}
+
+
+        }
 
     }
-
-    private void goHome(String name) {
-        Intent goHome = new Intent(cardsMenu.this, homeActivity.class);
+    //this function goes back to home menu
+    private void goHome (String name) {
+        Intent home = new Intent(cardsMenu.this, homeActivity.class);
         Bundle b = new Bundle();
         b.putString("name",name);
-        goHome.putExtras(b);
-        startActivity(goHome);
+        home.putExtras(b);
+        startActivity(home);
     }
 
 }
