@@ -60,13 +60,6 @@ public class homeActivity extends Activity implements OnClickListener{
                 launchComp(playerName, State);
                 break;
             }
-            /*case R.id.wifi:
-            {
-                State = "wifi";
-                launchWifi(playerName, State);
-
-                break;
-            }*/
             case R.id.local:
             {
                 State = "local";

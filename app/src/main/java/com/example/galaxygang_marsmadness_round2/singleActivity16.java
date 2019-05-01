@@ -3,6 +3,7 @@ package com.example.galaxygang_marsmadness_round2;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -44,6 +45,9 @@ public class singleActivity16 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singlegame);
+
+        MediaPlayer song = MediaPlayer.create(singleActivity16.this, R.raw.mars_madness_song_hq);
+        song.start();
 
         Bundle b = getIntent().getExtras();
         if (b != null){

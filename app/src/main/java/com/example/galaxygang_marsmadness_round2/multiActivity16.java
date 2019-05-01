@@ -4,6 +4,7 @@ package com.example.galaxygang_marsmadness_round2;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,10 +42,14 @@ public class multiActivity16 extends AppCompatActivity {
     int deck = 0;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.multigame);
+
+        //MediaPlayer song = MediaPlayer.create(multiActivity16.this, R.raw.mars_madness_song);
+        //song.start();
 
         Bundle b = getIntent().getExtras();
         if (b != null){
