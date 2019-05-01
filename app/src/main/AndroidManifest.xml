@@ -21,7 +21,6 @@
         <activity android:name=".cardsMenu"></activity>
         <activity android:name=".multiActivity"></activity>
         <activity android:name=".singleActivity"></activity>
-        <activity android:name=".WiFisearch"></activity>
         <activity android:name=".nameActivity"></activity>
 
     </application>

@@ -17,6 +17,7 @@
         layout="@layout/cards16"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:layout_below="@+id/tv_p1"
         android:layout_marginTop="8dp"
         android:visibility="gone" />
 
@@ -25,6 +26,7 @@
         layout="@layout/cards8"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:layout_below="@+id/tv_p1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:visibility="gone" />
@@ -34,6 +36,7 @@
         layout="@layout/cards20"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:layout_below="@+id/tv_p1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:visibility="gone" />

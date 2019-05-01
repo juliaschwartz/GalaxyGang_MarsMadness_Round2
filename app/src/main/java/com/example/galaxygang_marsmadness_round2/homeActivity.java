@@ -60,13 +60,13 @@ public class homeActivity extends Activity implements OnClickListener{
                 launchComp(playerName, State);
                 break;
             }
-            case R.id.wifi:
+            /*case R.id.wifi:
             {
                 State = "wifi";
                 launchWifi(playerName, State);
 
                 break;
-            }
+            }*/
             case R.id.local:
             {
                 State = "local";
@@ -111,12 +111,12 @@ public class homeActivity extends Activity implements OnClickListener{
     }
 
     //this function launches the wifi menu
-    private void launchWifi(String name, String State) {
+   /* private void launchWifi(String name, String State) {
         Intent wifi = new Intent(homeActivity.this, WiFisearch.class);
         Bundle b = new Bundle();
         b.putString("name",name); //pass the player's name to the multi menu
         b.putString("State", State); //pass along the game type
         wifi.putExtras(b);
         startActivity(wifi);
-    }
+    }*/
 }
