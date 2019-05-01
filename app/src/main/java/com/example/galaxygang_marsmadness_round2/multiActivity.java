@@ -15,7 +15,7 @@ import android.os.Handler;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class gameActivity extends AppCompatActivity {
+public class multiActivity extends AppCompatActivity {
 
     TextView tv_p1, tv_p2;
 
@@ -44,7 +44,7 @@ public class gameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game);
+        setContentView(R.layout.multigame);
 
         Bundle b = getIntent().getExtras();
         if (b != null){
@@ -478,7 +478,7 @@ public class gameActivity extends AppCompatActivity {
         iv_43.setEnabled(true);
         iv_44.setEnabled(true);
 
-        //check if the game is over
+        //check if the multigame is over
         checkEnd();
     }
     private void checkEnd() {
@@ -499,14 +499,14 @@ public class gameActivity extends AppCompatActivity {
                 iv_43.getVisibility() == View.INVISIBLE &&
                 iv_44.getVisibility() == View.INVISIBLE){
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(gameActivity.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(multiActivity.this);
             alertDialogBuilder
                     .setMessage("GAME OVER!\n"+p1_name+": " + playerPoints + "\n"+p2_name+": "+ cpuPoints)
                     .setCancelable(false)
                     .setPositiveButton("PLAY AGAIN", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent restart = new Intent(gameActivity.this, cardsMenu.class);
+                            Intent restart = new Intent(multiActivity.this, cardsMenu.class);
                             Bundle new_b = new Bundle();
                             new_b.putString("name",p1_name);
                             restart.putExtras(new_b);
@@ -517,7 +517,7 @@ public class gameActivity extends AppCompatActivity {
                     .setNegativeButton("MENU", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent exit = new Intent(gameActivity.this, homeActivity.class);
+                            Intent exit = new Intent(multiActivity.this, homeActivity.class);
                             Bundle exit_b = new Bundle();
                             exit_b.putString("name",p1_name);
                             exit.putExtras(exit_b);

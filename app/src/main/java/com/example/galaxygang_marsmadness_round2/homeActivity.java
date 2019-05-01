@@ -11,12 +11,13 @@ import android.widget.TextView;
 /***************************************************
  * implementation for home.xml
  * this is the home screen, basically the main menu
- * welcomes player, asks for what type of game to play
+ * welcomes player, asks for what type of multigame to play
  **************************************************/
 
 public class homeActivity extends Activity implements OnClickListener{
 
     private String playerName;
+    private String State;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,63 +50,72 @@ public class homeActivity extends Activity implements OnClickListener{
         switch(v.getId()) {
             case R.id.single :
             {
-                launchSingle(playerName);
+                State = "single";
+                launchSingle(playerName, State);
                 break;
             }
             case R.id.computer:
             {
-                launchComp(playerName);
+                State = "computer";
+                launchComp(playerName, State);
                 break;
             }
             case R.id.wifi:
             {
-                launchWifi(playerName);
+                State = "wifi";
+                launchWifi(playerName, State);
+
                 break;
             }
             case R.id.local:
             {
-                launchLocal(playerName);
+                State = "local";
+                launchLocal(playerName, State);
                 break;
             }
         }
     }
 
-    //this function launches the cards menu for a single player game
-    private void launchSingle(String name) {
+    //this function launches the cards menu for a single player multigame
+    private void launchSingle(String name, String State) {
         Intent sing = new Intent(homeActivity.this, cardsMenu.class);
         Bundle b = new Bundle();
-        b.putString("key","single"); //pass along that this will be a single player game
+        b.putString("key","single"); //pass along that this will be a single player multigame
         b.putString("name",name); //pass the player's name
+        b.putString("State", State); //pass along the game type
         sing.putExtras(b);
         startActivity(sing);
     }
 
-    //this function launches the cards menu for a computer game
-    private void launchComp(String name) {
+    //this function launches the cards menu for a computer multigame
+    private void launchComp(String name, String State) {
         Intent comp = new Intent(homeActivity.this, cardsMenu.class);
         Bundle b = new Bundle();
-        b.putString("key","computer"); //pass along that this will be a single player game
+        b.putString("key","computer"); //pass along that this will be a single player multigame
         b.putString("name",name); //pass the player's name
+        b.putString("State", State); //pass along the game type
         comp.putExtras(b);
         startActivity(comp);
     }
 
-    //this function launches the cards men for a local game
-    private void launchLocal(String name) {
+    //this function launches the cards menu for a local multigame
+    private void launchLocal(String name, String State) {
         Intent loc = new Intent(homeActivity.this, cardsMenu.class);
         Bundle b = new Bundle();
-        b.putString("key","local"); //pass along that this will be a single player game
+        b.putString("key","local"); //pass along that this will be a single player multigame
         b.putString("name",name); //pass the player's name
+        b.putString("State", State); //pass along the game type
         loc.putExtras(b);
         startActivity(loc);
 
     }
 
     //this function launches the wifi menu
-    private void launchWifi(String name) {
+    private void launchWifi(String name, String State) {
         Intent wifi = new Intent(homeActivity.this, WiFisearch.class);
         Bundle b = new Bundle();
         b.putString("name",name); //pass the player's name to the multi menu
+        b.putString("State", State); //pass along the game type
         wifi.putExtras(b);
         startActivity(wifi);
     }
