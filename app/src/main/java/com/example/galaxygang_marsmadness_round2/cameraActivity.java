@@ -1,5 +1,6 @@
 package com.example.galaxygang_marsmadness_round2;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -32,7 +33,7 @@ public class cameraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.camera);
         btnTakePic = findViewById(R.id.btnTakePic);
         if (Build.VERSION.SDK_INT >= 23){
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
@@ -43,7 +44,7 @@ public class cameraActivity extends AppCompatActivity {
                     dispatchPictureTakerAction();
             }
         });
-        imageView = findViewById(R.id.image)
+        imageView = findViewById(R.id.image);
     }
 
     @Override
@@ -65,7 +66,7 @@ public class cameraActivity extends AppCompatActivity {
 
             if (photoFile != null){
                 pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(MainActivity.this, "fssdfs",photoFile);
+                Uri photoURI = FileProvider.getUriForFile(cameraActivity.this, "fssdfs",photoFile);
                 takePic.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePic, 1);
             }
@@ -77,7 +78,7 @@ public class cameraActivity extends AppCompatActivity {
         File storageDir = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File image = null;
         try {
-            File image = File.createTempFile(name, ".jpg",storageDir);
+            image = File.createTempFile(name, ".jpg",storageDir);
         } catch (IOException e) {
             Log.d("mylog","Excep : " + e.toString());
         }
