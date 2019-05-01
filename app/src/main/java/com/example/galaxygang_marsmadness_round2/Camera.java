@@ -6,12 +6,12 @@ import android.graphics.Bitmap;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.net.Uri;
+/*import android.net.Uri;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import android.os.Environment;
+*/import android.os.Environment;
 
 
 public class Camera extends Activity {
@@ -28,6 +28,8 @@ public class Camera extends Activity {
         //connect xml to java file
         image=findViewById(R.id.photo);
         //...
+
+        //function that invoke an intent to capture a photo
         //REQUEST_IMAGE_CAPTURE = 1;
         //dispatch take picture intent
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -40,19 +42,8 @@ public class Camera extends Activity {
 
     }
 
-    //function that invoke an intent to capture a photo
 
-/*
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // returns the first activity component that can handle the intent.
-            // if you start the startActivityForResult function without intent, the
-            // app will crash.
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-*/
+
 
     //Do something with the photo!
     //Retrieve the image, display it in an ImageView
@@ -66,13 +57,24 @@ public class Camera extends Activity {
 
         }
     }
-
 }
 
 
 
 
+//function that invoke an intent to capture a photo
 
+/*
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // returns the first activity component that can handle the intent.
+            // if you start the startActivityForResult function without intent, the
+            // app will crash.
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+*/
 
     //create a collision resistant file name using a date time stamp
     //String currentPhotoPath;
