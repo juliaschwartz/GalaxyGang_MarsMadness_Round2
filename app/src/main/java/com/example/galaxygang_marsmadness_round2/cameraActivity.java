@@ -41,7 +41,7 @@ public class cameraActivity extends AppCompatActivity {
         btnTakePic.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                    dispatchPictureTakerAction();
+                dispatchPictureTakerAction();
             }
         });
         imageView = findViewById(R.id.image);
@@ -66,7 +66,7 @@ public class cameraActivity extends AppCompatActivity {
 
             if (photoFile != null){
                 pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(cameraActivity.this, "fssdfs",photoFile);
+                Uri photoURI = FileProvider.getUriForFile(cameraActivity.this, "com.example.galaxygang_marsmadness_round2.fileprovider",photoFile);
                 takePic.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePic, 1);
             }
