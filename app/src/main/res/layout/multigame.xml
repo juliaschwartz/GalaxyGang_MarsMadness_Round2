@@ -9,7 +9,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="@color/colorAccent"
+    android:background="@drawable/spacebackgroundimage"
     tools:context="com.example.galaxygang_marsmadness_round2.multiActivity">
 
     <include
