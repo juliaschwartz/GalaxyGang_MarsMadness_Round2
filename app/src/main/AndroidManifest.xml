@@ -25,6 +25,14 @@
         <activity android:name=".gameActivity"></activity>
         <activity android:name=".WiFisearch"></activity>
         <activity android:name=".nameActivity"></activity>
+
+        <activity android:name=".cameraActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <provider
             android:authorities="com.example.galaxygang_marsmadness_round2.FileProvider"
             android:name="android.support.v4.content.FileProvider"
