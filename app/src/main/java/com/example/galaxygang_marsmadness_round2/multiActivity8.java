@@ -4,20 +4,20 @@ package com.example.galaxygang_marsmadness_round2;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import android.os.Handler;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class singleActivity extends AppCompatActivity {
+public class multiActivity8 extends AppCompatActivity {
 
-    TextView tv_p1;
+    TextView tv_p1, tv_p2;
 
     ImageView iv_11, iv_12, iv_13, iv_14,iv_21, iv_22, iv_23, iv_24, iv_31, iv_32, iv_33, iv_34, iv_41, iv_42, iv_43, iv_44;
 
@@ -33,10 +33,10 @@ public class singleActivity extends AppCompatActivity {
     int cardNumber = 1;
 
     int turn = 1;
-    int playerPoints = 0; //cpuPoints = 0;
+    int playerPoints = 0, cpuPoints = 0;
 
     String p1_name = "P1";
-    //String p2_name = "Friend";
+    String p2_name = "Friend";
     String type = "local";
     int deck = 0;
 
@@ -44,7 +44,7 @@ public class singleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.singlegame);
+        setContentView(R.layout.multigame);
 
         Bundle b = getIntent().getExtras();
         if (b != null){
@@ -53,32 +53,19 @@ public class singleActivity extends AppCompatActivity {
             type = b.getString("type");
         }
 
-        //if (type.equals("computer")) {
-        //    p2_name = "Computer";
-        //}
-
-        View deck16 = findViewById(R.id.deck16);
-        View deck8 = findViewById(R.id.deck8);
-        View deck20 = findViewById(R.id.deck20);
-
-        switch(deck){
-            case(16) :
-                deck16.setVisibility(View.VISIBLE);
-                break;
-            case(8) :
-                deck8.setVisibility(View.VISIBLE);
-                break;
-            case(20) :
-                deck20.setVisibility(View.VISIBLE);
-                break;
+        if (type.equals("computer")) {
+            p2_name = "Computer";
         }
+
+        View deck8 = findViewById(R.id.deck8);
+        deck8.setVisibility(View.VISIBLE);
 
 
         tv_p1 = findViewById(R.id.tv_p1);
-       // tv_p2 = findViewById(R.id.tv_p2);
+        tv_p2 = findViewById(R.id.tv_p2);
 
         tv_p1.setText(p1_name+": "+ playerPoints);
-       // tv_p2.setText(p2_name+": "+cpuPoints);
+        tv_p2.setText(p2_name+": "+cpuPoints);
 
         iv_11 = findViewById(R.id.iv_11);
         iv_12 = findViewById(R.id.iv_12);
@@ -121,7 +108,7 @@ public class singleActivity extends AppCompatActivity {
         Collections.shuffle(Arrays.asList(cardsArray));
 
         //changing the color of the second player to show inactivity
-        //tv_p2.setTextColor(Color.GRAY);
+        tv_p2.setTextColor(Color.GRAY);
 
         iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -427,11 +414,11 @@ public class singleActivity extends AppCompatActivity {
             if (turn ==1){
                 playerPoints++;
                 tv_p1.setText(p1_name+": "+ playerPoints);
+            } else if (turn ==2) {
+                cpuPoints++;
+                tv_p2.setText(p2_name+": "+ cpuPoints);
             }
         } else {
-            playerPoints++;
-            tv_p1.setText(p1_name+": "+ playerPoints);
-
             iv_11.setImageResource(R.drawable.ic_back);
             iv_12.setImageResource(R.drawable.ic_back);
             iv_13.setImageResource(R.drawable.ic_back);
@@ -449,6 +436,16 @@ public class singleActivity extends AppCompatActivity {
             iv_43.setImageResource(R.drawable.ic_back);
             iv_44.setImageResource(R.drawable.ic_back);
 
+            //change the player turn and corresponding text color
+            if(turn == 1){
+                turn = 2;
+                tv_p1.setTextColor(Color.GRAY);
+                tv_p2.setTextColor(Color.WHITE);
+            } else if(turn == 2){
+                turn = 1;
+                tv_p1.setTextColor(Color.WHITE);
+                tv_p2.setTextColor(Color.GRAY);
+            }
         }
 
         iv_11.setEnabled(true);
@@ -489,14 +486,14 @@ public class singleActivity extends AppCompatActivity {
                 iv_43.getVisibility() == View.INVISIBLE &&
                 iv_44.getVisibility() == View.INVISIBLE){
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(singleActivity.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(multiActivity8.this);
             alertDialogBuilder
-                    .setMessage("GAME OVER!\n"+p1_name+": " + playerPoints + "\n")
+                    .setMessage("GAME OVER!\n"+p1_name+": " + playerPoints + "\n"+p2_name+": "+ cpuPoints)
                     .setCancelable(false)
                     .setPositiveButton("PLAY AGAIN", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent restart = new Intent(singleActivity.this, cardsMenu.class);
+                            Intent restart = new Intent(multiActivity8.this, cardsMenu.class);
                             Bundle new_b = new Bundle();
                             new_b.putString("name",p1_name);
                             restart.putExtras(new_b);
@@ -507,7 +504,7 @@ public class singleActivity extends AppCompatActivity {
                     .setNegativeButton("MENU", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent exit = new Intent(singleActivity.this, homeActivity.class);
+                            Intent exit = new Intent(multiActivity8.this, homeActivity.class);
                             Bundle exit_b = new Bundle();
                             exit_b.putString("name",p1_name);
                             exit.putExtras(exit_b);
