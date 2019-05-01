@@ -429,6 +429,9 @@ public class singleActivity extends AppCompatActivity {
                 tv_p1.setText(p1_name+": "+ playerPoints);
             }
         } else {
+            playerPoints++;
+            tv_p1.setText(p1_name+": "+ playerPoints);
+
             iv_11.setImageResource(R.drawable.ic_back);
             iv_12.setImageResource(R.drawable.ic_back);
             iv_13.setImageResource(R.drawable.ic_back);
