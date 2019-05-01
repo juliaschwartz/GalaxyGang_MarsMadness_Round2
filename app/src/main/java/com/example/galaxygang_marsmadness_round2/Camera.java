@@ -5,6 +5,8 @@ import android.provider.MediaStore;
 import android.graphics.Bitmap;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.content.FileProvider;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.net.Uri;
 import java.io.File;
@@ -13,9 +15,28 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import android.os.Environment;
 
+import com.example.cleanmarsmadness.R;
+
+/***************************************************
+ * implementation for thumbnail.xmlxml
+ * ********************************************/
 
 
 public class Camera extends Activity{
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.thumbnail);
+
+        Button single = findViewById(R.id.single);
+        Button multi =  findViewById(R.id.multi);
+
+        single.setOnClickListener(this);
+        multi.setOnClickListener(this);
+
+
     //extends activity allows you to use instances of app.Activity from java import
 
     ImageView image;
@@ -71,7 +92,7 @@ public class Camera extends Activity{
 
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
+        // Ensure that there's a thumbnail activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             // Create the File where the photo should go
             File photoFile = null;

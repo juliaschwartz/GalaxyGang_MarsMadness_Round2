@@ -18,7 +18,7 @@
         android:required="true"
         android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-    <!--Include permission for camera and camera features-->
+    <!--Include permission for thumbnail and thumbnail features-->
     <uses-permission
         android:name="android.permission.CAMERA"/>
     <uses-feature
@@ -40,18 +40,6 @@
 
         <!--Configure FileProvider in the Manifest-->
         <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.android.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
-            <paths xmlns:android="http://schemas.android.com/apk/res/android">
-                <files-path name="my_images" path="images/"/>
-
-            </paths>
-
         </provider>
 
         <activity android:name=".local_multiplayer_game">
