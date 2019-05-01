@@ -17,4 +17,5 @@
     <string name="name_hint">name</string>
     <string name="p1_0">P1: 0</string>
     <string name="p2_0">P2: 0</string>
+    <string name="play_the_computer"> Play the computer </string>
 </resources>
