@@ -15,9 +15,9 @@ import android.os.Handler;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class multiActivity8 extends AppCompatActivity {
+public class singleActivity8 extends AppCompatActivity {
 
-    TextView tv_p1, tv_p2;
+    TextView tv_p1;
 
     ImageView iv_8_11, iv_8_12, iv_8_21, iv_8_22,  iv_8_31, iv_8_32,  iv_8_41, iv_8_42;
 
@@ -33,11 +33,9 @@ public class multiActivity8 extends AppCompatActivity {
     int cardNumber = 1;
 
     int turn = 1;
-    int playerPoints = 0, cpuPoints = 0;
+    int playerPoints = 0;
 
     String p1_name = "P1";
-    String p2_name = "Friend";
-    String type = "local";
 
 
     @Override
@@ -48,11 +46,7 @@ public class multiActivity8 extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         if (b != null){
             p1_name = b.getString("name");
-            type = b.getString("type");
-        }
 
-        if (type.equals("computer")) {
-            p2_name = "Computer";
         }
 
         View deck8 = findViewById(R.id.deck8);
@@ -60,10 +54,10 @@ public class multiActivity8 extends AppCompatActivity {
 
 
         tv_p1 = findViewById(R.id.tv_p1);
-        tv_p2 = findViewById(R.id.tv_p2);
+
 
         tv_p1.setText(p1_name+": "+ playerPoints);
-        tv_p2.setText(p2_name+": "+cpuPoints);
+
 
         iv_8_11 = findViewById(R.id.iv_8_11);
         iv_8_12 = findViewById(R.id.iv_8_12);
@@ -97,8 +91,6 @@ public class multiActivity8 extends AppCompatActivity {
         //shuffle the cards16
         Collections.shuffle(Arrays.asList(cardsArray));
 
-        //changing the color of the second player to show inactivity
-        tv_p2.setTextColor(Color.GRAY);
 
         iv_8_11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -281,39 +273,27 @@ public class multiActivity8 extends AppCompatActivity {
 
             //add points to the correct player
 
-            if (turn ==1){
+            if (turn ==1) {
                 playerPoints++;
-                tv_p1.setText(p1_name+": "+ playerPoints);
-            } else if (turn ==2) {
-                cpuPoints++;
-                tv_p2.setText(p2_name+": "+ cpuPoints);
+                tv_p1.setText(p1_name + ": " + playerPoints);
             }
-        } else {
-            iv_8_11.setImageResource(R.drawable.ic_back);
-            iv_8_12.setImageResource(R.drawable.ic_back);
+            } else {
+                playerPoints++;
+                tv_p1.setText(p1_name + ": " + playerPoints);
 
-            iv_8_21.setImageResource(R.drawable.ic_back);
-            iv_8_22.setImageResource(R.drawable.ic_back);
+                iv_8_11.setImageResource(R.drawable.ic_back);
+                iv_8_12.setImageResource(R.drawable.ic_back);
 
-            iv_8_31.setImageResource(R.drawable.ic_back);
-            iv_8_32.setImageResource(R.drawable.ic_back);
+                iv_8_21.setImageResource(R.drawable.ic_back);
+                iv_8_22.setImageResource(R.drawable.ic_back);
 
-            iv_8_41.setImageResource(R.drawable.ic_back);
-            iv_8_42.setImageResource(R.drawable.ic_back);
+                iv_8_31.setImageResource(R.drawable.ic_back);
+                iv_8_32.setImageResource(R.drawable.ic_back);
 
+                iv_8_41.setImageResource(R.drawable.ic_back);
+                iv_8_42.setImageResource(R.drawable.ic_back);
 
-            //change the player turn and corresponding text color
-            if(turn == 1){
-                turn = 2;
-                tv_p1.setTextColor(Color.GRAY);
-                tv_p2.setTextColor(Color.WHITE);
-            } else if(turn == 2){
-                turn = 1;
-                tv_p1.setTextColor(Color.WHITE);
-                tv_p2.setTextColor(Color.GRAY);
             }
-        }
-
         iv_8_11.setEnabled(true);
         iv_8_12.setEnabled(true);
 
@@ -343,23 +323,14 @@ public class multiActivity8 extends AppCompatActivity {
                 iv_8_41.getVisibility() == View.INVISIBLE &&
                 iv_8_42.getVisibility() == View.INVISIBLE){
 
-            String message;
-            if(playerPoints>cpuPoints){
-                message = "GAME OVER!\n"+p1_name + " wins!";
-            } else if(cpuPoints>playerPoints) {
-                message = "GAME OVER!\n"+p2_name + " wins!";
-            } else {
-                message = "GAME OVER!\n"+"It's a tie!";
-            }
-
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(multiActivity8.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(singleActivity8.this);
             alertDialogBuilder
-                    .setMessage(message)
+                    .setMessage("GAME OVER!\n"+p1_name+" took " + playerPoints +" turns!"+ "\n")
                     .setCancelable(false)
                     .setNegativeButton("MENU", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent exit = new Intent(multiActivity8.this, homeActivity.class);
+                            Intent exit = new Intent(singleActivity8.this, homeActivity.class);
                             Bundle exit_b = new Bundle();
                             exit_b.putString("name",p1_name);
                             exit.putExtras(exit_b);

@@ -32,15 +32,14 @@ public class MainActivity extends Activity implements OnClickListener {
         enter = findViewById(R.id.enter);
 
         enter.setOnClickListener(this);
-
-        //MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.mars_madness_song_hq);
-        //song.start();
     }
 
     //the only activity on this screen is going to the name screen when the enter button is clicked
     @Override
     public void onClick(View v) {
         rocketLaunch();
+        MediaPlayer woosh = MediaPlayer.create(MainActivity.this, R.raw.jet_whoosh);
+        woosh.start();
         /*try {
             Thread.sleep(1500);
         } catch(InterruptedException ex) {
@@ -56,8 +55,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private void rocketLaunch() {
         AnimatorSet launch = new AnimatorSet();
-        ObjectAnimator y = ObjectAnimator.ofFloat(rocket, "y", -1100);
-        ObjectAnimator x = ObjectAnimator.ofFloat(rocket, "x", 1100);
+        ObjectAnimator y = ObjectAnimator.ofFloat(rocket, "translationY", -1100);
+        ObjectAnimator x = ObjectAnimator.ofFloat(rocket, "translationX", 1100);
         launch.playTogether(x,y);
         launch.setInterpolator(new LinearInterpolator());
         launch.setDuration(1200);

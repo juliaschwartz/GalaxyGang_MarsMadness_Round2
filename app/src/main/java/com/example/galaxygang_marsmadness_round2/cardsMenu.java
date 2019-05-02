@@ -88,14 +88,23 @@ public class cardsMenu extends Activity {
                 b.putString("name", name);
                 game.putExtras(b);
                 startActivity(game);
-            } else {
+            } else if (cards == 16) {
                 Intent game = new Intent(cardsMenu.this, multiActivity16.class);
                 Bundle b = new Bundle();
                 b.putString("type", type);
                 b.putString("name", name);
                 game.putExtras(b);
                 startActivity(game);
+            } else if (cards == 20) {
+                Intent game = new Intent(cardsMenu.this, multiActivity20.class);
+                Bundle b = new Bundle();
+                b.putString("type", type);
+                b.putString("name", name);
+                game.putExtras(b);
+                startActivity(game);
             }
+
+
         }
 
     }
