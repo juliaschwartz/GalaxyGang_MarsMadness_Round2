@@ -28,83 +28,80 @@ public class cameraActivity extends AppCompatActivity {
 
     Button btnTakePic;
     ImageView imageView;
-    ImageView thumbnail = findViewById(R.id.camera);
     String pathToFile;
-
+    Button doneButton = findViewById(R.id.doneButton);
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera);
         btnTakePic = findViewById(R.id.btnTakePic);
-        if (Build.VERSION.SDK_INT >= 23) {
+        if (Build.VERSION.SDK_INT >= 23){
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
         }
-        btnTakePic.setOnClickListener(new View.OnClickListener() {
+        btnTakePic.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
                 dispatchPictureTakerAction();
             }
         });
         imageView = findViewById(R.id.image);
+
+        doneButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                switch(v.getId()) {
+                    case R.id.doneButton :
+                    {
+                        launchNamescreen(); //go back to the name screen
+                        break;
+                    }
+                }
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == 1) {
+        if (resultCode == RESULT_OK){
+            if (requestCode == 1){
                 Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
-                thumbnail.setImageBitmap(bitmap);
+                imageView.setImageBitmap(bitmap);
             }
         }
     }
 
-    private void dispatchPictureTakerAction() {
+    private void dispatchPictureTakerAction(){
         Intent takePic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePic.resolveActivity(getPackageManager()) != null) {
+        if (takePic.resolveActivity(getPackageManager()) != null){
             File photoFile = null;
             photoFile = createPhotoFile();
 
-            if (photoFile != null) {
+            if (photoFile != null){
                 pathToFile = photoFile.getAbsolutePath();
-                Uri photoURI = FileProvider.getUriForFile(cameraActivity.this, "com.example.galaxygang_marsmadness_round2.fileprovider", photoFile);
+                Uri photoURI = FileProvider.getUriForFile(cameraActivity.this, "com.example.galaxygang_marsmadness_round2.fileprovider",photoFile);
                 takePic.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePic, 1);
             }
         }
     }
 
-    private File createPhotoFile() {
+    private File createPhotoFile(){
         String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         File storageDir = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File image = null;
         try {
-            image = File.createTempFile(name, ".jpg", storageDir);
+            image = File.createTempFile(name, ".jpg",storageDir);
         } catch (IOException e) {
-            Log.d("mylog", "Excep : " + e.toString());
+            Log.d("mylog","Excep : " + e.toString());
         }
         return image;
     }
 
-    @Override
-
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager() != null)) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            thumbnail.setImageBitmap(imageBitmap);
-            imageView.setImageBitmap(imageBitmap);
-        }
+    private void launchNamescreen() {
+        Intent done = new Intent(cameraActivity.this, nameActivity.class);
+        startActivity(done);
     }
 
 }
