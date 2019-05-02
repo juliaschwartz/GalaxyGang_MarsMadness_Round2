@@ -17,4 +17,10 @@
         android:layout_width="196dp"
         android:layout_height="226dp"/>
 
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:text="Done" />
+
 </LinearLayout>
