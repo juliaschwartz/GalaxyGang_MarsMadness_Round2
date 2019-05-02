@@ -28,7 +28,7 @@ public class cameraActivity extends AppCompatActivity {
 
     Button btnTakePic;
     ImageView imageView;
-    ImageView thumbnail;
+    ImageView thumbnail = findViewById(R.id.camera);;
     String pathToFile;
 
     @Override
@@ -54,7 +54,7 @@ public class cameraActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK){
             if (requestCode == 1){
                 Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
-                imageView.setImageBitmap(bitmap);
+                thumbnail.setImageBitmap(bitmap);
             }
         }
     }

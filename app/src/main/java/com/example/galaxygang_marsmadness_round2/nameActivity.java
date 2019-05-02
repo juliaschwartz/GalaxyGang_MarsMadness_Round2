@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 /***************************************************
  * implementation for namescreen.xml
@@ -28,16 +29,31 @@ public class nameActivity extends Activity implements OnClickListener {
         next = findViewById(R.id.next);
         next.setOnClickListener(this);
 
+        ImageButton sayCheeseButton;
+        sayCheeseButton = findViewById(R.id.camera);
+        sayCheeseButton.setOnClickListener(this);
+
         inputName = findViewById(R.id.name_input);
 
     }
 
+
     @Override
     public void onClick(View v) {
-        String playerName = inputName.getText().toString(); //get the inputted name
-        launchHome(playerName); //go to the home screen
+        switch(v.getId()) {
+            case R.id.next :
+            {
+                String playerName = inputName.getText().toString(); //get the inputted name
+                launchHome(playerName); //go to the home screen
+                break;
+            }
+            case R.id.camera:
+            {
+                launchCamera();
+                break;
+            }
+         }
     }
-
 
     private void launchHome(String name) {
         Intent home = new Intent(nameActivity.this, homeActivity.class);
@@ -47,4 +63,8 @@ public class nameActivity extends Activity implements OnClickListener {
         startActivity(home);
     }
 
+    private void launchCamera() {
+        Intent capture = new Intent ( nameActivity.this, cameraActivity.class);
+        startActivity(capture);
+    }
 }
