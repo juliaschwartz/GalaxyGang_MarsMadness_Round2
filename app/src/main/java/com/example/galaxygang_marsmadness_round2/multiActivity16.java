@@ -540,4 +540,13 @@ public class multiActivity16 extends AppCompatActivity {
         image207 = R.drawable.ic_image207;
         image208 = R.drawable.ic_image208;
     }
+
+   // private int ComputerTurn(){
+     //   int[] cards = new int[]{101,102,103,104,105,106,107,108,201,202,203,204,205,206,207,208};
+
+
+   // }
+
 }
+
+

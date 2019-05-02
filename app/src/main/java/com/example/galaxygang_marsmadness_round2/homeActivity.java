@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.TextView;
+import android.animation.ObjectAnimator;
 
 /***************************************************
  * implementation for home.xml
@@ -18,6 +19,8 @@ public class homeActivity extends Activity implements OnClickListener{
 
     private String playerName;
     private String State;
+
+    private TextView nameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,10 @@ public class homeActivity extends Activity implements OnClickListener{
             playerName = b.getString("name"); //gets the name inputted from the name screen
         }
 
-        TextView nameText = findViewById(R.id.nameText);
+        nameText = findViewById(R.id.nameText);
         nameText.setText(playerName); //puts the player's name on the screen
         //now the screen should say: welcome <name>
+
 
     }
 
@@ -112,4 +116,5 @@ public class homeActivity extends Activity implements OnClickListener{
         wifi.putExtras(b);
         startActivity(wifi);
     }*/
+
 }
