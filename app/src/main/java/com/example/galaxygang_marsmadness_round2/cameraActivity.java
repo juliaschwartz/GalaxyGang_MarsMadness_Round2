@@ -29,10 +29,10 @@ public class cameraActivity extends AppCompatActivity {
     Button btnTakePic;
     ImageView imageView;
     String pathToFile;
-    Button doneButton = findViewById(R.id.doneButton);
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera);
         btnTakePic = findViewById(R.id.btnTakePic);
@@ -46,19 +46,6 @@ public class cameraActivity extends AppCompatActivity {
             }
         });
         imageView = findViewById(R.id.image);
-
-        doneButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                switch(v.getId()) {
-                    case R.id.doneButton :
-                    {
-                        launchNamescreen(); //go back to the name screen
-                        break;
-                    }
-                }
-            }
-        });
     }
 
     @Override
@@ -97,11 +84,6 @@ public class cameraActivity extends AppCompatActivity {
             Log.d("mylog","Excep : " + e.toString());
         }
         return image;
-    }
-
-    private void launchNamescreen() {
-        Intent done = new Intent(cameraActivity.this, nameActivity.class);
-        startActivity(done);
     }
 
 }
