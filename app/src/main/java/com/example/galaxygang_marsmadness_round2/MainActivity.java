@@ -22,6 +22,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private ImageView rocket;
 
+    MediaPlayer song;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class MainActivity extends Activity implements OnClickListener {
         Button enter;
         enter = findViewById(R.id.enter);
 
-        MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.mars_madness_song);
+        song = MediaPlayer.create(MainActivity.this, R.raw.mars_madness_song);
         song.start();
 
         enter.setOnClickListener(this);

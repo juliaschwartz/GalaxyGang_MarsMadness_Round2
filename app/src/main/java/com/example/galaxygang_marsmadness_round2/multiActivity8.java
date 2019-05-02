@@ -4,6 +4,7 @@ package com.example.galaxygang_marsmadness_round2;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,11 +40,15 @@ public class multiActivity8 extends AppCompatActivity {
     String p2_name = "Friend";
     String type = "local";
 
+    MediaPlayer beep;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.multigame);
+
+        beep = MediaPlayer.create(multiActivity8.this, R.raw.match_beep);
 
         Bundle b = getIntent().getExtras();
         if (b != null){
@@ -243,6 +248,9 @@ public class multiActivity8 extends AppCompatActivity {
     private void calculate() {
         //if cards16 are equal, remove them and add point
         if (firstCard == secondCard){
+
+            beep.start();
+
             if (clickedFirst == 0) {
                 iv_8_11.setVisibility(View.INVISIBLE);
             } else if (clickedFirst == 1) {

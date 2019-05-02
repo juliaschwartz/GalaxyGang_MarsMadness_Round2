@@ -37,11 +37,14 @@ public class singleActivity16 extends AppCompatActivity {
 
     String p1_name = "P1";
 
+    MediaPlayer beep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singlegame);
+
+        beep = MediaPlayer.create(singleActivity16.this, R.raw.match_beep);
 
         Bundle b = getIntent().getExtras();
         if (b != null){
@@ -327,6 +330,10 @@ public class singleActivity16 extends AppCompatActivity {
     private void calculate() {
         //if cards16 are equal, remove them and add point
         if (firstCard == secondCard){
+
+
+            beep.start();
+
             if (clickedFirst == 0) {
                 iv_11.setVisibility(View.INVISIBLE);
             } else if (clickedFirst == 1) {
