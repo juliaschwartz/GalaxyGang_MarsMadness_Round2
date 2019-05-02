@@ -15,21 +15,20 @@ import android.widget.EditText;
  * this screen comes between the launch screen and the home screen
  **************************************************/
 
-public class nameActivity extends Activity implements OnClickListener {
+public class nameActivity extends Activity implements OnClickListener{
 
     private EditText inputName; //this is where the user inputs their name
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.namescreen);
 
-        Button next;
-        next = findViewById(R.id.next);
-        next.setOnClickListener(this);
-
         inputName = findViewById(R.id.name_input);
 
+        Button next = findViewById(R.id.next);
+        next.setOnClickListener(this);
     }
 
     @Override
@@ -46,5 +45,7 @@ public class nameActivity extends Activity implements OnClickListener {
         home.putExtras(b);
         startActivity(home);
     }
+
+
 
 }

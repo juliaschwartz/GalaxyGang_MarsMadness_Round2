@@ -10,7 +10,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:background="@drawable/spacebackgroundimage"
-    tools:context="com.example.galaxygang_marsmadness_round2.multiActivity">
+    tools:context="com.example.galaxygang_marsmadness_round2.multiActivity16">
 
     <include
         android:id="@+id/deck16"

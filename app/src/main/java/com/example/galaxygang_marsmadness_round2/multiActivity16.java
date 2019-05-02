@@ -15,7 +15,7 @@ import android.os.Handler;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class multiActivity extends AppCompatActivity {
+public class multiActivity16 extends AppCompatActivity {
 
     TextView tv_p1, tv_p2;
 
@@ -38,7 +38,6 @@ public class multiActivity extends AppCompatActivity {
     String p1_name = "P1";
     String p2_name = "Friend";
     String type = "local";
-    int deck = 0;
 
 
     @Override
@@ -46,10 +45,12 @@ public class multiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.multigame);
 
+        //MediaPlayer song = MediaPlayer.create(multiActivity16.this, R.raw.mars_madness_song);
+        //song.start();
+
         Bundle b = getIntent().getExtras();
         if (b != null){
             p1_name = b.getString("name");
-            deck = b.getInt("cards");
             type = b.getString("type");
         }
 
@@ -58,20 +59,8 @@ public class multiActivity extends AppCompatActivity {
         }
 
         View deck16 = findViewById(R.id.deck16);
-        View deck8 = findViewById(R.id.deck8);
-        View deck20 = findViewById(R.id.deck20);
+        deck16.setVisibility(View.VISIBLE);
 
-        switch(deck){
-            case(16) :
-                deck16.setVisibility(View.VISIBLE);
-                break;
-            case(8) :
-                deck8.setVisibility(View.VISIBLE);
-                break;
-            case(20) :
-                deck20.setVisibility(View.VISIBLE);
-                break;
-        }
 
 
         tv_p1 = findViewById(R.id.tv_p1);
@@ -499,25 +488,23 @@ public class multiActivity extends AppCompatActivity {
                 iv_43.getVisibility() == View.INVISIBLE &&
                 iv_44.getVisibility() == View.INVISIBLE){
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(multiActivity.this);
+            String message;
+            if(playerPoints>cpuPoints){
+                message = "GAME OVER!\n"+p1_name + " wins!";
+            } else if(cpuPoints>playerPoints) {
+                message = "GAME OVER!\n"+p2_name + " wins!";
+            } else {
+                message = "GAME OVER!\n"+"It's a tie!";
+            }
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(multiActivity16.this);
             alertDialogBuilder
-                    .setMessage("GAME OVER!\n"+p1_name+": " + playerPoints + "\n"+p2_name+": "+ cpuPoints)
+                    .setMessage(message)
                     .setCancelable(false)
-                    .setPositiveButton("PLAY AGAIN", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent restart = new Intent(multiActivity.this, cardsMenu.class);
-                            Bundle new_b = new Bundle();
-                            new_b.putString("name",p1_name);
-                            restart.putExtras(new_b);
-                            startActivity(restart);
-                            finish();
-                        }
-                    })
                     .setNegativeButton("MENU", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent exit = new Intent(multiActivity.this, homeActivity.class);
+                            Intent exit = new Intent(multiActivity16.this, homeActivity.class);
                             Bundle exit_b = new Bundle();
                             exit_b.putString("name",p1_name);
                             exit.putExtras(exit_b);
@@ -547,4 +534,13 @@ public class multiActivity extends AppCompatActivity {
         image207 = R.drawable.ic_image207;
         image208 = R.drawable.ic_image208;
     }
+
+   // private int ComputerTurn(){
+     //   int[] cards = new int[]{101,102,103,104,105,106,107,108,201,202,203,204,205,206,207,208};
+
+
+   // }
+
 }
+
+

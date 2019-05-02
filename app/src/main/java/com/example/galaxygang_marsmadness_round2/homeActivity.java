@@ -1,12 +1,16 @@
 package com.example.galaxygang_marsmadness_round2;
 
+import android.animation.AnimatorSet;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.animation.ObjectAnimator;
 
 /***************************************************
  * implementation for home.xml
@@ -17,22 +21,25 @@ import android.widget.TextView;
 public class homeActivity extends Activity implements OnClickListener{
 
     private String playerName;
-    private String State;
+    private ImageView cool_rocket;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
+        cool_rocket = findViewById(R.id.cool_rocket);
+
+        rocketLaunch2();
+
         Button single =   findViewById(R.id.single);
         Button computer = findViewById(R.id.computer);
         Button local =    findViewById(R.id.local);
-        Button wifi =     findViewById(R.id.wifi);
 
         single.setOnClickListener(this);
         computer.setOnClickListener(this);
         local.setOnClickListener(this);
-        wifi.setOnClickListener(this);
 
         Bundle b = getIntent().getExtras();
         if (b != null) {
@@ -50,73 +57,67 @@ public class homeActivity extends Activity implements OnClickListener{
         switch(v.getId()) {
             case R.id.single :
             {
-                State = "single";
-                launchSingle(playerName, State);
+                //State = "single";
+                launchSingle(playerName);
                 break;
             }
             case R.id.computer:
             {
-                State = "computer";
-                launchComp(playerName, State);
+                //State = "computer";
+                launchComp(playerName);
                 break;
             }
-            /*case R.id.wifi:
-            {
-                State = "wifi";
-                launchWifi(playerName, State);
-
-                break;
-            }*/
             case R.id.local:
             {
-                State = "local";
-                launchLocal(playerName, State);
+               // State = "local";
+                launchLocal(playerName);
                 break;
             }
         }
     }
 
     //this function launches the cards menu for a single player multigame
-    private void launchSingle(String name, String State) {
+    private void launchSingle(String name) {
         Intent sing = new Intent(homeActivity.this, cardsMenu.class);
         Bundle b = new Bundle();
         b.putString("key","single"); //pass along that this will be a single player multigame
         b.putString("name",name); //pass the player's name
-        b.putString("State", State); //pass along the game type
+        //b.putString("State", State); //pass along the game type
         sing.putExtras(b);
         startActivity(sing);
     }
 
     //this function launches the cards menu for a computer multigame
-    private void launchComp(String name, String State) {
+    private void launchComp(String name) {
         Intent comp = new Intent(homeActivity.this, cardsMenu.class);
         Bundle b = new Bundle();
         b.putString("key","computer"); //pass along that this will be a single player multigame
         b.putString("name",name); //pass the player's name
-        b.putString("State", State); //pass along the game type
+      //  b.putString("State", State); //pass along the game type
         comp.putExtras(b);
         startActivity(comp);
     }
 
     //this function launches the cards menu for a local multigame
-    private void launchLocal(String name, String State) {
+    private void launchLocal(String name) {
         Intent loc = new Intent(homeActivity.this, cardsMenu.class);
         Bundle b = new Bundle();
         b.putString("key","local"); //pass along that this will be a single player multigame
         b.putString("name",name); //pass the player's name
-        b.putString("State", State); //pass along the game type
+      //  b.putString("State", State); //pass along the game type
         loc.putExtras(b);
         startActivity(loc);
 
     }
 
-    //this function launches the wifi menu
-   /* private void launchWifi(String name, String State) {
-        Intent wifi = new Intent(homeActivity.this, WiFisearch.class);
-        Bundle b = new Bundle();
-        b.putString("name",name); //pass the player's name to the multi menu
-        b.putString("State", State); //pass along the game type
-        wifi.putExtras(b);
-        startActivity(wifi);
-    }*/
+    private void rocketLaunch2() {
+        AnimatorSet launch = new AnimatorSet();
+        ObjectAnimator y = ObjectAnimator.ofFloat(cool_rocket, "translationY", -2000);
+        ObjectAnimator x = ObjectAnimator.ofFloat(cool_rocket, "translationX", 1500);
+        launch.playTogether(x,y);
+        launch.setInterpolator(new LinearInterpolator());
+        launch.setDuration(10000);
+        launch.start();
+    }
+
 }

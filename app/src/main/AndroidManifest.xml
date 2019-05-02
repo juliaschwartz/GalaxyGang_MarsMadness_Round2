@@ -9,20 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".homeActivity"></activity>
         <activity android:name=".cardsMenu"></activity>
-        <activity android:name=".multiActivity"></activity>
-        <activity android:name=".singleActivity"></activity>
+        <activity android:name=".multiActivity16"></activity>
+        <activity android:name=".singleActivity16"></activity>
         <activity android:name=".nameActivity"></activity>
+        <activity android:name=".multiActivity8"></activity>
+        <activity android:name=".multiActivity20"></activity>
+        <activity android:name=".singleActivity20"></activity>
+        <activity android:name=".singleActivity8"></activity>
 
     </application>
-
 </manifest>

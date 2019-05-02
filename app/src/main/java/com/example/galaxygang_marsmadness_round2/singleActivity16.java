@@ -3,7 +3,7 @@ package com.example.galaxygang_marsmadness_round2;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class singleActivity extends AppCompatActivity {
+public class singleActivity16 extends AppCompatActivity {
 
     TextView tv_p1;
 
@@ -36,9 +36,6 @@ public class singleActivity extends AppCompatActivity {
     int playerPoints = 0; //cpuPoints = 0;
 
     String p1_name = "P1";
-    //String p2_name = "Friend";
-    String type = "local";
-    int deck = 0;
 
 
     @Override
@@ -49,36 +46,15 @@ public class singleActivity extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         if (b != null){
             p1_name = b.getString("name");
-            deck = b.getInt("cards");
-            type = b.getString("type");
         }
-
-        //if (type.equals("computer")) {
-        //    p2_name = "Computer";
-        //}
 
         View deck16 = findViewById(R.id.deck16);
-        View deck8 = findViewById(R.id.deck8);
-        View deck20 = findViewById(R.id.deck20);
-
-        switch(deck){
-            case(16) :
-                deck16.setVisibility(View.VISIBLE);
-                break;
-            case(8) :
-                deck8.setVisibility(View.VISIBLE);
-                break;
-            case(20) :
-                deck20.setVisibility(View.VISIBLE);
-                break;
-        }
+        deck16.setVisibility(View.VISIBLE);
 
 
         tv_p1 = findViewById(R.id.tv_p1);
-       // tv_p2 = findViewById(R.id.tv_p2);
 
         tv_p1.setText(p1_name+": "+ playerPoints);
-       // tv_p2.setText(p2_name+": "+cpuPoints);
 
         iv_11 = findViewById(R.id.iv_11);
         iv_12 = findViewById(R.id.iv_12);
@@ -119,9 +95,6 @@ public class singleActivity extends AppCompatActivity {
 
         //shuffle the cards16
         Collections.shuffle(Arrays.asList(cardsArray));
-
-        //changing the color of the second player to show inactivity
-        //tv_p2.setTextColor(Color.GRAY);
 
         iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -468,7 +441,7 @@ public class singleActivity extends AppCompatActivity {
         iv_43.setEnabled(true);
         iv_44.setEnabled(true);
 
-        //check if the multigame is over
+        //check if the game is over
         checkEnd();
     }
     private void checkEnd() {
@@ -489,25 +462,14 @@ public class singleActivity extends AppCompatActivity {
                 iv_43.getVisibility() == View.INVISIBLE &&
                 iv_44.getVisibility() == View.INVISIBLE){
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(singleActivity.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(singleActivity16.this);
             alertDialogBuilder
-                    .setMessage("GAME OVER!\n"+p1_name+": " + playerPoints + "\n")
+                    .setMessage("GAME OVER!\n"+p1_name+" took " + playerPoints + " turns!"+"\n")
                     .setCancelable(false)
-                    .setPositiveButton("PLAY AGAIN", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent restart = new Intent(singleActivity.this, cardsMenu.class);
-                            Bundle new_b = new Bundle();
-                            new_b.putString("name",p1_name);
-                            restart.putExtras(new_b);
-                            startActivity(restart);
-                            finish();
-                        }
-                    })
                     .setNegativeButton("MENU", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent exit = new Intent(singleActivity.this, homeActivity.class);
+                            Intent exit = new Intent(singleActivity16.this, homeActivity.class);
                             Bundle exit_b = new Bundle();
                             exit_b.putString("name",p1_name);
                             exit.putExtras(exit_b);
