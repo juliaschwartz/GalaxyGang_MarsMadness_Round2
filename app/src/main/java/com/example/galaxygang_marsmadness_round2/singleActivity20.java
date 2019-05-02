@@ -46,7 +46,7 @@ public class singleActivity20 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.multigame);
+        setContentView(R.layout.singlegame);
 
         Bundle b = getIntent().getExtras();
         if (b != null){
@@ -109,9 +109,6 @@ public class singleActivity20 extends AppCompatActivity {
 
         //shuffle the cards16
         Collections.shuffle(Arrays.asList(cardsArray));
-
-        //changing the color of the second player to show inactivity
-        tv_p2.setTextColor(Color.GRAY);
 
         iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
