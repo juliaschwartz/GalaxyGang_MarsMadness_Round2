@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.app.Activity;
 import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+//import android.hardware.camera2;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +26,7 @@ import java.util.Date;
 
 import static android.os.Environment.getExternalStoragePublicDirectory;
 
-public class cameraActivity extends AppCompatActivity {
+public class cameraActivity extends Activity {
 
     Button btnTakePic;
     ImageView imageView;
