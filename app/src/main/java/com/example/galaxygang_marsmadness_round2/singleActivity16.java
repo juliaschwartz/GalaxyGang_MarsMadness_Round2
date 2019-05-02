@@ -36,7 +36,6 @@ public class singleActivity16 extends AppCompatActivity {
     int playerPoints = 0; //cpuPoints = 0;
 
     String p1_name = "P1";
-    //String p2_name = "Friend";
     String type = "local";
     int deck = 0;
 
@@ -46,19 +45,12 @@ public class singleActivity16 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singlegame);
 
-        MediaPlayer song = MediaPlayer.create(singleActivity16.this, R.raw.mars_madness_song_hq);
-        song.start();
-
         Bundle b = getIntent().getExtras();
         if (b != null){
             p1_name = b.getString("name");
             deck = b.getInt("cards");
             type = b.getString("type");
         }
-
-        //if (type.equals("computer")) {
-        //    p2_name = "Computer";
-        //}
 
         View deck16 = findViewById(R.id.deck16);
         View deck8 = findViewById(R.id.deck8);

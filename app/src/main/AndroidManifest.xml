@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.galaxygang_marsmadness_round2">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="androoid.permission.CAMERA" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,16 +22,8 @@
         <activity android:name=".multiActivity16"></activity>
         <activity android:name=".singleActivity16"></activity>
         <activity android:name=".nameActivity"></activity>
+        <activity android:name=".multiActivity8"></activity>
+        <activity android:name=".multiActivity20"></activity>
 
-    <provider
-        android:authorities="com.example.galaxygang_marsmadness_round2.fileprovider"
-        android:name="android.support.v4.content.FileProvider"
-        android:exported="false"
-        android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_paths"></meta-data>
-
-    </provider>
     </application>
 </manifest>

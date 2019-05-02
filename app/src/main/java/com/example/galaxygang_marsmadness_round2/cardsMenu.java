@@ -81,16 +81,21 @@ public class cardsMenu extends Activity {
             game.putExtras(b);
             startActivity(game);
         } else if (type.equals("computer") || type.equals("local")) {
-            Intent game = new Intent(cardsMenu.this, multiActivity16.class);
-            Bundle b = new Bundle();
-            b.putString("type", type);
-            b.putInt("cards", cards);
-            b.putString("name", name);
-            game.putExtras(b);
-            startActivity(game);
-            //}
-
-
+            if (cards == 8) {
+                Intent game = new Intent(cardsMenu.this, multiActivity8.class);
+                Bundle b = new Bundle();
+                b.putString("type", type);
+                b.putString("name", name);
+                game.putExtras(b);
+                startActivity(game);
+            } else {
+                Intent game = new Intent(cardsMenu.this, multiActivity16.class);
+                Bundle b = new Bundle();
+                b.putString("type", type);
+                b.putString("name", name);
+                game.putExtras(b);
+                startActivity(game);
+            }
         }
 
     }

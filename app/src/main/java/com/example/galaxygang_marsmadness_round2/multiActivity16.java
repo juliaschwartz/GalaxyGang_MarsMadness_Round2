@@ -39,7 +39,7 @@ public class multiActivity16 extends AppCompatActivity {
     String p1_name = "P1";
     String p2_name = "Friend";
     String type = "local";
-    int deck = 0;
+
 
 
 
@@ -54,7 +54,6 @@ public class multiActivity16 extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         if (b != null){
             p1_name = b.getString("name");
-            deck = b.getInt("cards");
             type = b.getString("type");
         }
 
