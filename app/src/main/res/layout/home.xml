@@ -51,13 +51,9 @@
 
     <TextView
         android:id="@+id/nameText"
-        android:layout_width="217dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="97dp"
-        android:layout_marginLeft="97dp"
+        android:layout_width="405dp"
+        android:layout_height="46dp"
         android:layout_marginTop="17dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginRight="97dp"
         android:layout_marginBottom="92dp"
         android:gravity="center"
         android:text="Name"

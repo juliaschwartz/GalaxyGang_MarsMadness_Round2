@@ -11,6 +11,7 @@ import android.media.MediaPlayer;
 import android.animation.ObjectAnimator;
 import android.animation.AnimatorSet;
 import android.view.animation.LinearInterpolator;
+
 /***************************************************
  * implementation for launch.xml
  * this is the welcome screen to the app
@@ -31,6 +32,9 @@ public class MainActivity extends Activity implements OnClickListener {
         Button enter;
         enter = findViewById(R.id.enter);
 
+        MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.mars_madness_song);
+        song.start();
+
         enter.setOnClickListener(this);
     }
 
@@ -40,11 +44,6 @@ public class MainActivity extends Activity implements OnClickListener {
         rocketLaunch();
         MediaPlayer woosh = MediaPlayer.create(MainActivity.this, R.raw.jet_whoosh);
         woosh.start();
-        /*try {
-            Thread.sleep(1500);
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }*/
         launchNameScreen();
     }
 
