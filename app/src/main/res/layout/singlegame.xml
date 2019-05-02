@@ -9,15 +9,16 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="@color/colorAccent"
-    tools:context="com.example.galaxygang_marsmadness_round2.multiActivity">
+    android:background="@drawable/spacebackgroundimage"
+    tools:context="com.example.galaxygang_marsmadness_round2.multiActivity16">
 
     <include
         android:id="@+id/deck16"
         layout="@layout/cards16"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tv_p1"
+        android:layout_marginTop="8dp"
         android:visibility="gone" />
 
     <include
@@ -25,6 +26,7 @@
         layout="@layout/cards8"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:layout_below="@+id/tv_p1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:visibility="gone" />
@@ -34,6 +36,7 @@
         layout="@layout/cards20"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:layout_below="@+id/tv_p1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:visibility="gone" />

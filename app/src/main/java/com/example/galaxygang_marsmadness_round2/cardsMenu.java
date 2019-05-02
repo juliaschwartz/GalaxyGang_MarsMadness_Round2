@@ -74,14 +74,14 @@ public class cardsMenu extends Activity {
     private void launchGame(int cards, String type, String name) {
 
         if (type.equals("single")) {
-            Intent game = new Intent(cardsMenu.this, singleActivity.class);
+            Intent game = new Intent(cardsMenu.this, singleActivity16.class);
             Bundle b = new Bundle();
             b.putInt("cards", cards);
             b.putString("name", name);
             game.putExtras(b);
             startActivity(game);
         } else if (type.equals("computer") || type.equals("local")) {
-            Intent game = new Intent(cardsMenu.this, multiActivity.class);
+            Intent game = new Intent(cardsMenu.this, multiActivity16.class);
             Bundle b = new Bundle();
             b.putString("type", type);
             b.putInt("cards", cards);
