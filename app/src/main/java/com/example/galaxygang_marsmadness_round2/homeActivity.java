@@ -57,11 +57,6 @@ public class homeActivity extends Activity implements OnClickListener{
                 launchComp(playerName);
                 break;
             }
-            case R.id.wifi:
-            {
-                launchWifi(playerName);
-                break;
-            }
             case R.id.local:
             {
                 launchLocal(playerName);
@@ -99,14 +94,5 @@ public class homeActivity extends Activity implements OnClickListener{
         loc.putExtras(b);
         startActivity(loc);
 
-    }
-
-    //this function launches the wifi menu
-    private void launchWifi(String name) {
-        Intent wifi = new Intent(homeActivity.this, WiFisearch.class);
-        Bundle b = new Bundle();
-        b.putString("name",name); //pass the player's name to the multi menu
-        wifi.putExtras(b);
-        startActivity(wifi);
     }
 }
