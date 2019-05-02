@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
+import android.media.MediaPlayer;
 
 /***************************************************
  * implementation for namescreen.xml
@@ -19,7 +20,6 @@ public class nameActivity extends Activity implements OnClickListener{
 
     private EditText inputName; //this is where the user inputs their name
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,7 @@ public class nameActivity extends Activity implements OnClickListener{
 
         Button next = findViewById(R.id.next);
         next.setOnClickListener(this);
+
     }
 
     @Override

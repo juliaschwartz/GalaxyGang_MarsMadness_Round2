@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
         enter = findViewById(R.id.enter);
 
         song = MediaPlayer.create(MainActivity.this, R.raw.mars_madness_song);
+        song.setLooping(true);
         song.start();
 
         enter.setOnClickListener(this);
