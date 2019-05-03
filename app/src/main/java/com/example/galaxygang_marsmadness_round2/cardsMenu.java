@@ -9,7 +9,14 @@ import android.widget.RadioGroup;
 import android.content.Intent;
 
 /***************************************************
- * implementation for cards_menu.xml
+ * Implementation for cards_menu.xml:
+ *
+ * In this code, 3 buttons in a radio group are displayed.
+ * The buttons will bring the player either to an 8 card game, a 16 card game, or a 20 card game.
+ * When one of the buttons is clicked by the user, the screen redirects to the
+ * correct game screen depending on said card amount. The type of game (multiplayer), and the name of the user
+ * is also passed through this script.
+ * There is alos a button that redirects the user back to the home menu.
  * ********************************************/
 
 public class cardsMenu extends Activity {
@@ -29,7 +36,7 @@ public class cardsMenu extends Activity {
 
         Bundle b = getIntent().getExtras();
         if (b != null){
-            game_type = b.getString("key");     //get type of multigame
+            game_type = b.getString("key");     //get type of multiplayer game
             playerName = b.getString("name");   //get player name
         }
 

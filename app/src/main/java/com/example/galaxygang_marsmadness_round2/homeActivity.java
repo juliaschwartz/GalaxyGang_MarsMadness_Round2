@@ -13,9 +13,11 @@ import android.widget.TextView;
 import android.animation.ObjectAnimator;
 
 /***************************************************
- * implementation for home.xml
- * this is the home screen, basically the main menu
- * welcomes player, asks for what type of multigame to play
+ * Implementation for home.xml:
+ * Contained within this java file is the home screen. This home screen serves as a main menu.
+ * The function is to retrieve the name of the player, and ask what type of game they wish to play,
+ * either single player, multiplayer, multiplayer over wifi, or multiplayer with the CPU.
+ * Players are redirected back to this home screen after completion of memory game.
  **************************************************/
 
 public class homeActivity extends Activity implements OnClickListener{

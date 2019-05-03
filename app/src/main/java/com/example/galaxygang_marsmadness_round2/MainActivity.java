@@ -13,9 +13,11 @@ import android.animation.AnimatorSet;
 import android.view.animation.LinearInterpolator;
 
 /***************************************************
- * implementation for launch.xml
- * this is the welcome screen to the app
- *main purpose is to look nice
+ * Implementation for launch.xml:
+ * This java file serves to function the introductory screen to our app. This consists of a simple text view that
+ * displays the name of the game, a button labelled "blast off", and a space ship animation.
+ * Once the blast off button is pressed, the space ship then quite literally blasts off, as it moves in a diagonal animation form,
+ * and plays a rocket noise sound effect.
  **************************************************/
 
 public class MainActivity extends Activity implements OnClickListener {
