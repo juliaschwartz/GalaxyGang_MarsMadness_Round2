@@ -36,8 +36,8 @@ public class MainActivity extends Activity implements OnClickListener {
         Button enter;
         enter = findViewById(R.id.enter);
 
-        song = MediaPlayer.create(MainActivity.this, R.raw.mars_madness_song);
-        song.setLooping(true);
+        song = MediaPlayer.create(MainActivity.this, R.raw.mars_madness_song); //song plays
+        song.setLooping(true); //song loops
         song.start();
 
         enter.setOnClickListener(this);
@@ -52,11 +52,13 @@ public class MainActivity extends Activity implements OnClickListener {
         launchNameScreen();
     }
 
+    //this function goes to the screen where the user inputs their name
     private void launchNameScreen() {
         Intent name = new Intent(MainActivity.this, nameActivity.class);
         startActivity(name);
     }
 
+    //this function launches the rocket when the button is clicked
     private void rocketLaunch() {
         AnimatorSet launch = new AnimatorSet();
         ObjectAnimator y = ObjectAnimator.ofFloat(rocket, "translationY", -1100);

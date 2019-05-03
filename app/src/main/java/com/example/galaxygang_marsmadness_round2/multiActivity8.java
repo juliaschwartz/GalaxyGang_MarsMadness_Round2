@@ -11,6 +11,11 @@ package com.example.galaxygang_marsmadness_round2;
  * At the end, a pop up is employed to display who won the game depending on how many matches they had.
  * Furthermore, an option to go back to the main menu is displayed.
  *
+ * * ****
+ *  * NOTE: individual functions within the game activities are identical
+ *  * to see comments on these functions see singleActivity8 file
+ *  * ****
+ *
 *********************************/
 
 

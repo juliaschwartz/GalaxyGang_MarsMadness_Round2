@@ -39,6 +39,7 @@ public class nameActivity extends Activity implements OnClickListener{
     }
 
 
+    //this function launches the main home menu
     private void launchHome(String name) {
         Intent home = new Intent(nameActivity.this, homeActivity.class);
         Bundle b = new Bundle();

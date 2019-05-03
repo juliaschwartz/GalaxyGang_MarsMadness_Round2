@@ -43,6 +43,7 @@ public class singleActivity8 extends AppCompatActivity {
     int image101, image102, image103, image104,
             image201, image202, image203, image204;
 
+    //variables used in below functions
     int firstCard, secondCard;
     int clickedFirst, clickedSecond;
     int cardNumber = 1;
@@ -52,6 +53,7 @@ public class singleActivity8 extends AppCompatActivity {
 
     String p1_name = "P1";
 
+    //this beep plays when a match is made
     MediaPlayer beep;
 
 
@@ -64,10 +66,11 @@ public class singleActivity8 extends AppCompatActivity {
 
         Bundle b = getIntent().getExtras();
         if (b != null){
-            p1_name = b.getString("name");
+            p1_name = b.getString("name"); //set player's inputted name
 
         }
 
+        //each game screen makes the proper deck visible on the layout
         View deck8 = findViewById(R.id.deck8);
         deck8.setVisibility(View.VISIBLE);
 
@@ -188,6 +191,7 @@ public class singleActivity8 extends AppCompatActivity {
 
     }
 
+    //flips card, calls calculate function
     private void doStuff(ImageView iv, int card){
         //set the correct image to imageview
         if (cardsArray[card] == 101){
@@ -251,6 +255,8 @@ public class singleActivity8 extends AppCompatActivity {
         }
 
     }
+
+    //sees if cards are equal and adds points
     private void calculate() {
         //if cards16 are equal, remove them and add point
         if (firstCard == secondCard){
@@ -329,9 +335,11 @@ public class singleActivity8 extends AppCompatActivity {
         iv_8_42.setEnabled(true);
 
 
-        //check if the multigame is over
+        //check if the game is over
         checkEnd();
     }
+
+    //this function determines what message pops up when the game ends
     private void checkEnd() {
         if (iv_8_11.getVisibility() == View.INVISIBLE &&
                 iv_8_12.getVisibility() == View.INVISIBLE &&
@@ -364,6 +372,7 @@ public class singleActivity8 extends AppCompatActivity {
             alertDialog.show();
         }
     }
+    //this sets the images on the cards
     private void frontOfCardResources(){
         image101 = R.drawable.ic_image101;
         image102 = R.drawable.ic_image102;

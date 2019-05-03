@@ -12,6 +12,11 @@ package com.example.galaxygang_marsmadness_round2;
  * At the end, a pop up is employed that displays a single users score for that
  * round, and an option to go back to the main menu.
  *
+ * * ****
+ *  * NOTE: individual functions within the game activities are identical
+ *  * to see comments on these functions see singleActivity8 file
+ *  * ****
+ *
  *********************************/
 
 

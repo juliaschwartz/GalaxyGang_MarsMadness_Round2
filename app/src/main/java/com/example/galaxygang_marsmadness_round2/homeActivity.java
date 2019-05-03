@@ -111,7 +111,7 @@ public class homeActivity extends Activity implements OnClickListener{
         startActivity(loc);
 
     }
-
+    //this function makes the rocket fly across the screen
     private void rocketLaunch2() {
         AnimatorSet launch = new AnimatorSet();
         ObjectAnimator y = ObjectAnimator.ofFloat(cool_rocket, "translationY", -2000);
