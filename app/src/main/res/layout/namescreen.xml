@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- File containing the layout for the screen where the user will
+    enter their name. This input is then displayed on each successive
+    screen. File to be implemented by java class nameActivity.-->
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -29,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/enter_name" />
 
-
+<!-- This is where the user enters their name.-->
     <EditText
         android:id="@+id/name_input"
         android:layout_width="287dp"
@@ -51,6 +55,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+    <!-- When finished, the user can click this button and they will be
+     taken to the main menu screen.-->
     <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"
