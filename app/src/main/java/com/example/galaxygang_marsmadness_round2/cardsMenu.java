@@ -29,7 +29,7 @@ public class cardsMenu extends Activity {
 
         Bundle b = getIntent().getExtras();
         if (b != null){
-            game_type = b.getString("key");     //get type of multigame
+            game_type = b.getString("key");     //get type of game
             playerName = b.getString("name");   //get player name
         }
 
@@ -41,6 +41,7 @@ public class cardsMenu extends Activity {
             }
         });
 
+        //button selects the correct number of cards when clicked
         Button start = findViewById(R.id.start);
         start.setOnClickListener(new OnClickListener() {
             @Override
@@ -67,10 +68,11 @@ public class cardsMenu extends Activity {
     }
 
     public void onRadioButtonClicked(View v) {
-        //wooohoeohfeohfe
+        //this allows the radio buttons to be clicked
     }
 
-    //this function launches the multigame activity
+    //this function launches the correct game activity
+    //based on the inputs, a specific game type will be launched
     private void launchGame(int cards, String type, String name) {
 
         if (type.equals("single")) {
