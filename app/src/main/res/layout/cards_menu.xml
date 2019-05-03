@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- File containing the layout of the screen with the
+    menu that allows players to select how many cards they
+    would like to be presented in the game. This file is
+    implemented by java class cardsMenu-->
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +12,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/spacebackgroundimage">
 
+<!--RadioGroup and RadioButtons were used here because they allow us
+    to present the user with a set of mutually exclusive
+    options to choose from. The RadioGroup here gives the user the
+    option of playing a game with either 8, 16, or 20 cards.-->
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -84,6 +94,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.333" />
 
+    <!-- Back button will take the user to the main menu screen-->
     <Button
         android:id="@+id/back"
         android:layout_width="87dp"
@@ -103,6 +114,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- The "Blastoff" button will take the user to the
+        screen for game play.-->
     <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"

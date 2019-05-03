@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- File containing the layout for the 16 card version of the game.
+    Implemented by java classes singleActivity16 and multiActivity16,
+    Table Layout provides format for the grid of images.
+    Linear Layout provides format for each column.
+    Each ImageView displays one of the card backs.-->
+
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- File containing for the layout of the home screen which contains
+    the main menu where the user will select what game mode they want
+    to proceed with: single player, play the computer, play a friend,
+    and play a friend online. This file will be implemented by homeActivity.-->
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,8 +12,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/spacebackgroundimage">
 
-
-    <Button
+<!-- When this button is clicked, the user will be taken to a game screen
+    where their opponent is the "computer". This button is currently
+    un-clickable because the functionality was not achieved.-->
+        <Button
         android:id="@+id/computer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,6 +36,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/single" />
 
+    <!-- Clicking this button will take the user to the screen to select
+        the number of cards they want, and then the game will be presented
+        such that the number of turns that the user takes is recorded.-->
     <Button
         android:id="@+id/single"
         android:layout_width="wrap_content"
@@ -49,6 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- This displays the name retrieve as user input in the name screen-->
     <TextView
         android:id="@+id/nameText"
         android:layout_width="405dp"
@@ -87,6 +99,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Welcome Aboard" />
 
+    <!-- This button takes the player to a game mode where the
+        phone can be passed between two local players. One player's
+        turn ends when they select two cards that do not match.-->
     <Button
         android:id="@+id/local"
         android:layout_width="wrap_content"
@@ -109,7 +124,9 @@
         app:layout_constraintTop_toBottomOf="@+id/computer" />
 
 
-    <!-- THIS NEEDS TO BE DELETED, IT CRASHES WHEN NOT INCLUDED, BUT IT IS NOT NECESSARY -->
+    <!-- This button is also currently un-clickable but when it works it
+        will allow the user to connect with another user's phone to play
+        the game in multi-player mode remotely-->
     <Button
         android:id="@+id/wifi"
         android:layout_width="wrap_content"

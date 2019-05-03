@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- File containing the layout for the launch screen- the first screen
+    that appears when the app is opened. File to be implemented by
+    java class MainActivity.-->
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -22,6 +27,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- When this button is clicked, it launches the app and
+        takes the user to the next screen where they can enter
+        their name.-->
     <Button
         android:id="@+id/enter"
         android:layout_width="wrap_content"
