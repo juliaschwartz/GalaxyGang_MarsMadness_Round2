@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.media.MediaPlayer;
 
 /***************************************************
- * implementation for namescreen.xml
+ * Implementation for namescreen.xml:
  * this is the screen where the player enters their name
  * the name will be used throughout the experience of the app
  * this screen comes between the launch screen and the home screen

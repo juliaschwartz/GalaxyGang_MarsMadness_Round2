@@ -1,5 +1,18 @@
 package com.example.galaxygang_marsmadness_round2;
 
+/*********************************
+ * Implementation for singleActivity8:
+ * This java class is dedicated to single player activity of a sixteen card game.
+ * Because it is an sixteen card game, the layout of the xml is determined, and 16 cards of 8 different
+ * styles are used. These cards are put into arrays, where when the image is clicked by the user,
+ * the image flips over into the card stored within the array. If two of the same photo are clicked,
+ * then the images disappear from the screen. The score is calculated by how many turns the user takes,
+ * with a goal of achieving the smallest score possible.
+ *
+ * At the end, a pop up is employed that displays a single users score for that
+ * round, and an option to go back to the main menu.
+ *
+ *********************************/
 
 import android.content.DialogInterface;
 import android.content.Intent;

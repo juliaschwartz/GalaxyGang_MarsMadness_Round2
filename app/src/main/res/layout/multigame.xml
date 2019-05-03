@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- File containing the general layout for the mutliplayer version of the game. To be
+    implemented by java classes multiActivity8, multiActivity16, multiActivity20.-->
+
 <RelativeLayout
     android:id="@+id/local_multiplayer_game"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,6 +15,10 @@
     android:background="@drawable/spacebackgroundimage"
     tools:context="com.example.galaxygang_marsmadness_round2.multiActivity16">
 
+    <!--The include container is utilized to bring in the 8, 16, and 20 card formats of
+    the game. The visibility of the card views are all set to "gone", but when the
+    user selects a radio button in the card menu screen, the corresponding card format
+    with the correct number of cards is made 'visible'.-->
     <include
         android:id="@+id/deck16"
         layout="@layout/cards16"
@@ -41,6 +48,9 @@
         android:layout_centerHorizontal="true"
         android:visibility="gone" />
 
+   <!-- Each player's score is recorded and displayed, as well as the player's names.
+        When it is one player's turn, their name will appear to be white while the other
+        player's name appears to be a duller grey.-->
     <TextView
         android:id="@+id/tv_p1"
         android:layout_width="382dp"

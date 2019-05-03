@@ -16,6 +16,19 @@ import android.os.Handler;
 import java.util.Arrays;
 import java.util.Collections;
 
+/*********************************
+ * Implementation for multiActivity16:
+ * This java class is dedicated to multiplayer activity of a sixteen card game.
+ * Because it is a 16 card game, the layout of the xml is determined, and 16 cards of 8 different
+ * styles are used. These cards are put into arrays, where when the image is clicked by the user,
+ * the image flips over into the card stored within the array. If two of the same photo are clicked,
+ * then the images disappear from the screen.
+ *
+ * At the end, a pop up is employed to display who won the game depending on how many matches they had.
+ * Furthermore, an option to go back to the main menu is displayed.
+ *
+ *********************************/
+
 public class multiActivity16 extends AppCompatActivity {
 
     TextView tv_p1, tv_p2;

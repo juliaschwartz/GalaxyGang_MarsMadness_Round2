@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- File containing the general layout for the single player version
+    of the game. File to be implemented by java classes singleActivity8,
+    singleActivity16, and singleActivity20.-->
+
 <RelativeLayout
     android:id="@+id/local_multiplayer_game"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,6 +16,10 @@
     android:background="@drawable/spacebackgroundimage"
     tools:context="com.example.galaxygang_marsmadness_round2.multiActivity16">
 
+    <!--The include container is utilized to bring in the 8, 16, and 20 card formats of
+    the game. The visibility of the card views are all set to "gone", but when the
+    user selects a radio button in the card menu screen, the corresponding card format
+    with the correct number of cards is made 'visible'.-->
     <include
         android:id="@+id/deck16"
         layout="@layout/cards16"
@@ -39,6 +47,9 @@
         android:layout_marginTop="8dp"
         android:visibility="gone" />
 
+    <!-- The user's score (number of turns) will be displayed
+        during the game. "P1" will be replaced by the name
+        entered by the user.-->
     <TextView
         android:id="@+id/tv_p1"
         android:layout_width="382dp"
